@@ -1078,6 +1078,9 @@ body{
 
 
     /* sinsa-------------- */
+    #section .sinsa{
+    background-image: url(images/Aromatica_sinsa_MO.jpg);
+    }
     #section .sinsa .sinsa_txt{
         padding: 350px 0 100px 10px;
     }
