@@ -14,7 +14,75 @@
     <!-- css -->
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        
+        //햄버거 버튼 클릭하면 lnb 나오게 하기
+        $('.gnb_button > a').click(function(e){
+            e.preventDefault();
+
+            $('.lnb_wrap').toggleClass('on');
+            $('.gnb_button').toggleClass('on');
+        });
+
+
+        //lnb 아코디언 메뉴
+            $(".lnb>li>a").click(function(e){
+            e.preventDefault();  //a태그로 인하여 생긴 어딘가로 이동하려는 속성을 해제(링크이동 해제)
+
+            if($(this).hasClass("active")){ //내가 클릭한 a에 클래스 active있는지 찾아서
+                $(".lnb>li>a").siblings("ul").stop().slideUp(500); //lnb>li>a 의 형제요소 ul을 전부 슬라이드 업
+                $(".lnb>li>a").removeClass("active"); //lnb>li>a에 클래스명 active를 다 지워
+                $(this).removeClass("active"); //클릭한 a도  active을 지워주고
+                $(this).siblings("ul").stop().slideUp(500); //형제요소인 ul을 찾아서 슬라이드 업
+
+            }else{ 
+                $(".lnb>li>a").siblings("ul").stop().slideUp(500);
+                $(".lnb>li>a").removeClass("active");
+                $(this).addClass("active"); //없으면 active을 추가해줘
+                $(this).siblings("ul").stop().slideDown(500);  //a랑 형제(같은레벨)인 ul을찾아서 슬라이드 다운
+            }           
+            });
+
+
+            
+
+        //메인배너 이미지 
+        let i = 0; // 현재 보여지는 애
+        let count = $(".main_ban_img_area>li").length;
+
+        function autoSlide(){
+            $(".main_ban_img_area").stop().animate({"margin-left":"-100%"}, 500, function(){
+            $(".main_ban_img_area>li").first().appendTo(".main_ban_img_area");
+            $(".main_ban_img_area").css({"margin-left":"0%"}); //위치값 재설정 
+
+            i++;
+            if(i >= count) i = 0;
+
+            $(".main_ban_btn>li").removeClass("on").eq(i).addClass("on");
+            });
+        }
+
+        let autoFade = setInterval(autoSlide, 3000);
+
+        $(".main_banner").mouseenter(function(){
+            clearInterval(autoFade);
+        });
+
+        $(".main_banner").mouseleave(function(){
+            autoFade = setInterval(autoSlide, 3000);
+        });
+
+
+    });
+</script>
 </head>
+
+
 <body>
     <div id="header">
         <div class="txt_banner">
@@ -24,9 +92,70 @@
                 <a class="close_button" href="#">x</a>
             </div>
         </div>
+        <div class="lnb_wrap">
+            <ul class="lnb">
+                <li>
+                    <a href="#">쇼핑</a>
+                    <ul class="lnb_sub">
+                        <li><a href="#">트라이얼</a></li>
+                        <li><a href="#">신제품</a></li>
+                        <li><a href="#">베스트</a></li>
+                        <li><a href="#">Gift</a></li>
+                        <li><a href="#">Last Chance ~60%</a></li><br>
+                        <li><a href="#">헤어케어</a></li>
+                        <li><a href="#">바디케어</a></li>
+                        <li><a href="#">스킨케어</a></li>
+                        <li><a href="#">리빙</a></li>
+                        <li><a href="#">리필</a></li>
+                        <li><a href="#">소품</a></li>
+                        <li><a href="#">아로마테라피</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">브랜드</a>
+                    <ul class="lnb_sub">
+                        <li><a href="#">스토리</a></li>
+                        <li><a href="#">원료</a></li>
+                        <li><a href="#">스토어</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">지속가능성</a>
+                    <ul class="lnb_sub">
+                        <li><a href="#">JOIN THE CIRCLE 소개</a></li>
+                        <li><a href="#">공병 재사용</a></li>
+                        <li><a href="#">공병수거신청</a></li>
+                        <li><a href="#">지속가능경영보고서</a></li>
+                        <li><a href="#">지속가능한 패키지</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">아로마티카 & 라이프</a>
+                </li>
+                <li>
+                    <a href="#">커뮤니티</a>
+                    <ul class="lnb_sub">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">문의하기</a></li>
+                        <li><a href="#">자주묻는 질문</a></li>
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">제안해주세요</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="lnb_side">
+                <li><a href="#">제품리뷰</a></li>
+                <li><a href="#">멤버십</a></li>
+                <li class="lang"><a href="#">EN</a></li>
+            </ul>
+        </div>
         <div class="hd_inner">
             <div class="gnb_button">
-                <a href="#"><span class="material-symbols-outlined">dehaze</span></a>
+                <a href="#">
+                    <span class="one"></span>
+                    <span class="two"></span>
+                    <span class="three"></span>
+                </a>
             </div>
             <h1 class="logo">
                 <a href="#"><img src="images/logotype_w_new.png" alt="logo"></a>
@@ -40,35 +169,76 @@
                 </li>
                 <li><img src="images/icon_mypage_w.svg" alt="mypage" width="30px"></li>
                 <li><img src="images/icon_cart_w.svg" alt="cart" width="30px"></li>
-                
             </ul>
         </div>
+
+        
     </div>
 
     <div id="section">
         <div class="main_banner">
             <ul class="main_ban_img_area">
-                <li>
+                <li class="bg1">
                     <a href="#"></a>
                     <div class="ban_txt">
                         <h1 class="m_banner_title">New Arrival</h1>
-                        <h2 calss="m_banner_desc">
+                        <h2 class="m_banner_desc">
                             신제품을 특별한 혜택과 함께 만나보세요<br>10%OFF
                         </h2>
                         <div><em>view more</em></div>
                     </div>
                 </li>
-                <!-- <li>
+                <li class="bg2">
                     <a href="#"></a>
                     <div class="ban_txt">
                         <h1 class="m_banner_title">AROMATICA Origin</h1>
-                        <h2 calss="m_banner_desc">
+                        <h2 class="m_banner_desc">
                             더 깨끗하고 안전한 성분,<br>
                             아로마티카의 원료를 확인해보세요.
                         </h2>
                         <div><em>view more</em></div>
                     </div>
-                </li> -->
+                </li>
+                <li class="bg3">
+                    <a href="#"></a>
+                    <div class="ban_txt">
+                        <h1 class="m_banner_title">Aromatherapy<br>in Daily Life</h1>
+                        <h2 class="m_banner_desc">
+                            가정의 달 5월,<br>
+                            엄마와 딸이 함께하는 아로마테라피 클래스
+                        </h2>
+                        <div><em>view more</em></div>
+                    </div>
+                </li>
+                <li class="bg4">
+                    <a href="#"></a>
+                    <div class="ban_txt">
+                        <h1 class="m_banner_title">Refill Day</h1>
+                        <h2 class="m_banner_desc">
+                            매월 21일 리필데이, 일회용을 줄이고 가치를 채워요<br>
+                            UP TO 50% OFF & 사은품 증정
+                        </h2>
+                        <div><em>view more</em></div>
+                    </div>
+                </li>
+                <li class="bg5">
+                    <a href="#"></a>
+                    <div class="ban_txt">
+                        <h1 class="m_banner_title">Last Chance ~60%</h1>
+                        <h2 class="m_banner_desc">
+                            봄의 마지막 선물, 놓치면 아쉬울 특별한 기회<br>
+                            지금바로 아로마티카 시즌제품을 60% 할인가로 만나보세요
+                        </h2>
+                        <div><em>view more</em></div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="main_ban_btn">
+                <li class="on"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
             </ul>
         </div>
 
@@ -77,137 +247,139 @@
                 <h1 class="section_title">Most Popular</h1>
                 <a href="#"><p class="view_all">view all</p></a>
             </div>
-            <ul class="most_product pro_list">
-                <li>
-                    <div class="mo_img_area">
-                        <a href="#">
-                            <img src="images/most_01.jpg" alt="수딩알로에베라1">
-                            <img src="images/most_01_1.jpg" alt="수딩알로에베라2">
-                        </a>
-                    </div>
-                    <div class="mo_txt_area">
-                        <a href="#"><h2>수딩 알로에 베라 젤500ML</h2></a>
-                        <div class="price">
-                            <p class="before_p">28,000원</p>
-                            <p class="sell_p">16,000원</p>
-                            <p class="discount">10%</p>
+            <div class="wrap_items">
+                <ul class="most_product pro_list">
+                    <li>
+                        <div class="mo_img_area">
+                            <a href="#">
+                                <img src="images/most_01.jpg" alt="수딩알로에베라1">
+                                <img src="images/most_01_1.jpg" alt="수딩알로에베라2">
+                            </a>
                         </div>
-                        
-                    </div>
-                </li>
-                <li>
-                    <div class="mo_img_area">
-                        <a href="#">
-                            <img src="images/most_02.jpg" alt="필로우미스트1">
-                            <img src="images/most_02_1.jpg" alt="필로우미스트2">
-                        </a>
-                    </div>
-                    <div class="mo_txt_area">
-                        <a href="#"><h2>슬립타이트 필로우 미스트 100ML</h2></a>
-                        <p>30,000원</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="mo_img_area">
-                        <a href="#">
-                            <img src="images/most_03.jpg" alt="릴리프밤1">
-                            <img src="images/most_03_1.jpg" alt="릴리프밤2">
-                        </a>
-                    </div>
-                    <div class="mo_txt_area">
-                        <a href="#"><h2>언버든 스트레스 릴리프 밤</h2></a>
-                        <p>28,000원</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="mo_img_area">
-                        <a href="#">
-                            <img src="images/most_04.jpg" alt="리드디퓨저1">
-                            <img src="images/most_04_1.jpg" alt="리드디퓨저2">
-                        </a>
-                    </div>
-                    <div class="mo_txt_area">
-                        <a href="#"><h2>리드 디퓨저 4종(택1)</h2></a>
-                        <p>29,000원</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="mo_img_area">
-                        <a href="#">
-                            <img src="images/most_05.jpg" alt="컨센트레이티드에센스1">
-                            <img src="images/most_05_1.jpg" alt="컨센트레이티드에센스2">
-                        </a>
-                    </div>
-                    <div class="mo_txt_area">
-                        <a href="#"><h2>바이탈라이징 로즈마리 컨센트레이티드 에센스 100ML</h2></a>
-                        <p>30,000원</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="mo_img_area">
-                        <a href="#">
-                            <img src="images/most_06.jpg" alt="탄력앰플1">
-                            <img src="images/most_06_1.jpg" alt="탄력앰플2">
-                        </a>
-                    </div>
-                    <div class="mo_txt_area">
-                        <a href="#"><h2>바이탈라이징 로즈마리 탄력 앰플 30ML</h2></a>
-                        <div class="price">
-                            <!-- <p class="before_p">28,000원</p> -->
-                            <p class="sell_p">35,000원</p>
-                            <!-- <p class="discount">10%</p> -->
+                        <div class="mo_txt_area">
+                            <a href="#"><h2>수딩 알로에 베라 젤500ML</h2></a>
+                            <div class="price">
+                                <p class="before_p">28,000원</p>
+                                <p class="sell_p">16,000원</p>
+                                <p class="discount">10%</p>
+                            </div>
+                            
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="mo_img_area">
-                        <a href="#">
-                            <img src="images/most_07.jpg" alt="탄력크림1">
-                            <img src="images/most_07_1.jpg" alt="탄력크림2">
-                        </a>
-                    </div>
-                    <div class="mo_txt_area">
-                        <a href="#"><h2>바이탈라이징 로즈마리 탄력 크림 50ML</h2></a>
-                        <div class="price">
-                            <p class="before_p">38,000원</p>
-                            <p class="sell_p">34,200원</p>
-                            <p class="discount">10%</p>
+                    </li>
+                    <li>
+                        <div class="mo_img_area">
+                            <a href="#">
+                                <img src="images/most_02.jpg" alt="필로우미스트1">
+                                <img src="images/most_02_1.jpg" alt="필로우미스트2">
+                            </a>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="mo_img_area">
-                        <a href="#">
-                            <img src="images/most_08.jpg" alt="바디크림샌달우드1">
-                            <img src="images/most_08_1.jpg" alt="바디크림샌달우드2">
-                        </a>
-                    </div>
-                    <div class="mo_txt_area">
-                        <a href="#"><h2>멜로우니스 오일 인 바디크림 매그놀리아 & 샌달우드 200G</h2></a>
-                        <div class="price">
-                            <!-- <p class="before_p">28,000원</p> -->
-                            <p class="sell_p">32,000원</p>
-                            <!-- <p class="discount">10%</p> -->
+                        <div class="mo_txt_area">
+                            <a href="#"><h2>슬립타이트 필로우 미스트 100ML</h2></a>
+                            <p>30,000원</p>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="mo_img_area">
-                        <a href="#">
-                            <img src="images/most_09.jpg" alt="바디오일&바디괄사1">
-                            <img src="images/most_09_1.jpg" alt="바디오일&바디괄사2">
-                        </a>
-                    </div>
-                    <div class="mo_txt_area">
-                        <a href="#"><h2>바디오일 & 바디 괄사</h2></a>
-                        <div class="price">
-                            <!-- <p class="before_p">28,000원</p> -->
-                            <p class="sell_p">25,200원</p>
-                            <!-- <p class="discount">10%</p> -->
+                    </li>
+                    <li>
+                        <div class="mo_img_area">
+                            <a href="#">
+                                <img src="images/most_03.jpg" alt="릴리프밤1">
+                                <img src="images/most_03_1.jpg" alt="릴리프밤2">
+                            </a>
                         </div>
-                    </div>
-                </li>
-            </ul>
+                        <div class="mo_txt_area">
+                            <a href="#"><h2>언버든 스트레스 릴리프 밤</h2></a>
+                            <p>28,000원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mo_img_area">
+                            <a href="#">
+                                <img src="images/most_04.jpg" alt="리드디퓨저1">
+                                <img src="images/most_04_1.jpg" alt="리드디퓨저2">
+                            </a>
+                        </div>
+                        <div class="mo_txt_area">
+                            <a href="#"><h2>리드 디퓨저 4종(택1)</h2></a>
+                            <p>29,000원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mo_img_area">
+                            <a href="#">
+                                <img src="images/most_05.jpg" alt="컨센트레이티드에센스1">
+                                <img src="images/most_05_1.jpg" alt="컨센트레이티드에센스2">
+                            </a>
+                        </div>
+                        <div class="mo_txt_area">
+                            <a href="#"><h2>바이탈라이징 로즈마리 컨센트레이티드 에센스 100ML</h2></a>
+                            <p>30,000원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mo_img_area">
+                            <a href="#">
+                                <img src="images/most_06.jpg" alt="탄력앰플1">
+                                <img src="images/most_06_1.jpg" alt="탄력앰플2">
+                            </a>
+                        </div>
+                        <div class="mo_txt_area">
+                            <a href="#"><h2>바이탈라이징 로즈마리 탄력 앰플 30ML</h2></a>
+                            <div class="price">
+                                <!-- <p class="before_p">28,000원</p> -->
+                                <p class="sell_p">35,000원</p>
+                                <!-- <p class="discount">10%</p> -->
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mo_img_area">
+                            <a href="#">
+                                <img src="images/most_07.jpg" alt="탄력크림1">
+                                <img src="images/most_07_1.jpg" alt="탄력크림2">
+                            </a>
+                        </div>
+                        <div class="mo_txt_area">
+                            <a href="#"><h2>바이탈라이징 로즈마리 탄력 크림 50ML</h2></a>
+                            <div class="price">
+                                <p class="before_p">38,000원</p>
+                                <p class="sell_p">34,200원</p>
+                                <p class="discount">10%</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mo_img_area">
+                            <a href="#">
+                                <img src="images/most_08.jpg" alt="바디크림샌달우드1">
+                                <img src="images/most_08_1.jpg" alt="바디크림샌달우드2">
+                            </a>
+                        </div>
+                        <div class="mo_txt_area">
+                            <a href="#"><h2>멜로우니스 오일 인 바디크림 매그놀리아 & 샌달우드 200G</h2></a>
+                            <div class="price">
+                                <!-- <p class="before_p">28,000원</p> -->
+                                <p class="sell_p">32,000원</p>
+                                <!-- <p class="discount">10%</p> -->
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mo_img_area">
+                            <a href="#">
+                                <img src="images/most_09.jpg" alt="바디오일&바디괄사1">
+                                <img src="images/most_09_1.jpg" alt="바디오일&바디괄사2">
+                            </a>
+                        </div>
+                        <div class="mo_txt_area">
+                            <a href="#"><h2>바디오일 & 바디 괄사</h2></a>
+                            <div class="price">
+                                <!-- <p class="before_p">28,000원</p> -->
+                                <p class="sell_p">25,200원</p>
+                                <!-- <p class="discount">10%</p> -->
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
             <div class="swiper_wrap">
                 <div class="swiper_base">
                     <div class="bar"></div>
@@ -665,5 +837,7 @@
             </div>
         </div>
     </div>
+
+
 </body>
 </html>
