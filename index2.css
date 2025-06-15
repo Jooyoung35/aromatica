@@ -327,7 +327,7 @@ body{
 
 /* most popular */
 
-#section .most_popular{
+#section .items{
     width: 100%;
     background-color: rgb(245, 239, 230);
     padding: 100px 0 150px;
@@ -346,6 +346,10 @@ body{
 #section .most_head .view_all{
     font-weight: 600;
 }
+
+
+
+
 
 /* -----------------------상품섹션 상단 view all 부분 --------------- */
 #section > div .view_all{
@@ -367,14 +371,18 @@ body{
     transform: scaleX(0);
     transform-origin: 100% 0;
 }
-/* -----------------------상품섹션 상단 view all 부분 --------------- */
 
 
 
-/* 스와이퍼 */
+
+
+
+
+
+
+/* 제품 리스트 스와이퍼 공통 적용---------------------------------- */
 swiper-container {
     height: 950px;
-    border: 1px solid red;
 }
 
 .mySwiper {
@@ -385,7 +393,7 @@ swiper-container {
 
 .mySwiper::part(pagination) {
     position: absolute !important;
-    top: 90% !important;
+    top: 85% !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: 50% !important;
@@ -395,55 +403,51 @@ swiper-container {
 }
 
 
-
-
-
 swiper-slide {
     flex-shrink: 0;
     box-sizing: border-box;
-    /* border: 1px solid blue; */
 }
-swiper-slide .new_img_area{
+swiper-slide .img_area{
     position: relative;
 }
-swiper-slide .new_img_area img {
+swiper-slide .img_area img {
     display: block;
     width: 100%;
     object-fit: cover;
     transition: all 0.5s;
 }
-swiper-slide .new_img_area img:first-child{
+swiper-slide .img_area img:first-child{
     position: absolute; top: 0; left: 0;
 }
-swiper-slide .new_img_area img:last-child{
+swiper-slide .img_area img:last-child{
     opacity: 0;
 }
-swiper-slide:hover .new_img_area img:first-child{
+swiper-slide:hover .img_area img:first-child{
     opacity: 0;
 }
-swiper-slide:hover .new_img_area img:last-child{
+swiper-slide:hover .img_area img:last-child{
     opacity: 1;
 }
-swiper-slide .new_txt_area{
+swiper-slide .txt_area{
     padding-TOP: 30px;
 }
-swiper-slide .new_txt_area h2{
+swiper-slide .txt_area h2{
     font-size: 15px;
     font-weight: 600;
     color: rgb(51, 51, 51);
 }
-swiper-slide .new_txt_area .price{
+swiper-slide .txt_area .price{
     display: flex;
     align-items: center;
 }
-swiper-slide .new_txt_area p{
+swiper-slide .txt_area p{
     font-size: 1.5em;
     font-weight: 800;
     margin-top: 5px;
     color: rgb(43, 43, 43);
 }
 
-swiper-slide .new_txt_area .before_p{
+swiper-slide .txt_area .before_p{
     color: rgb(151, 151, 151);
     text-decoration: line-through;
     font-size: 1.1em;
@@ -451,11 +455,11 @@ swiper-slide .new_txt_area .before_p{
     margin-right: 10px;
     padding-top: 5px;
 }
-swiper-slide .new_txt_area .discount{
+swiper-slide .txt_area .discount{
     color: rgb(71, 124, 99);
     margin-left: 10px;
 }
-swiper-slide:first-child .new_txt_area{
+swiper-slide:first-child .txt_area{
     margin-left: 25px;
 }
 
@@ -466,88 +470,7 @@ swiper-slide:first-child .new_txt_area{
 
 
 
-#section .most_popular .most_product{
-    width: 100%;
-    display: inline-flex;
-    user-select: none;
-    flex-wrap: no-wrap;
-    overflow: hidden;
-}
 
-#section .most_popular .most_product>li{
-    width: calc(100% / 4 - 15px); 
-    margin-right: 10px;
-    flex-shrink: 0;
-}
-#section .most_popular .most_product li .mo_img_area{
-    position: relative;
-}
-#section .most_popular .most_product li .mo_img_area img{
-    width: 100%;
-    transition: all 0.5s;
-}
-#section .most_popular .most_product li .mo_img_area img:first-child{
-    position: absolute; top: 0; left: 0;
-}
-#section .most_popular .most_product li .mo_img_area img:last-child{
-    opacity: 0;
-}
-#section .most_popular .most_product li:hover .mo_img_area img:first-child{
-    opacity: 0;
-}
-#section .most_popular .most_product li:hover .mo_img_area img:last-child{
-    opacity: 1;
-}
-
-#section .most_popular .most_product li .mo_txt_area{
-    padding-TOP: 30px;
-}
-#section .most_popular .most_product li .mo_txt_area h2{
-    font-size: 15px;
-    font-weight: 600;
-    color: rgb(51, 51, 51);
-}
-#section .most_popular .most_product li .mo_txt_area p{
-    font-size: 1.5em;
-    font-weight: 800;
-    margin-top: 5px;
-    color: rgb(43, 43, 43);
-}
-#section .most_popular .most_product li .mo_txt_area .price{
-    display: flex;
-    align-items: center;
-}
-#section .most_popular .most_product li .mo_txt_area .before_p{
-    color: rgb(151, 151, 151);
-    text-decoration: line-through;
-    font-size: 1.1em;
-    font-weight: 600;
-    margin-right: 10px;
-    padding-top: 5px;
-}
-#section .most_popular .most_product li .mo_txt_area .discount{
-    color: rgb(71, 124, 99);
-    margin-left: 10px;
-}
-#section .most_popular .most_product li:first-child .mo_txt_area{
-    margin-left: 25px;
-}
-
-
-#section .most_popular .swiper_wrap{
-    width: 940px;
-    margin: 100px auto;
-}
-#section .most_popular .swiper_wrap .swiper_base{
-    width: 100%;
-    height: 3px;
-    background-color: rgb(187, 187, 187);
-}
-#section .most_popular .swiper_wrap .swiper_base .bar{
-    width: 12.5%;
-    height: 3px;
-    background-color: rgb(51, 51, 51);
-}
 
 
 
@@ -568,7 +491,7 @@ swiper-slide:first-child .new_txt_area{
 }
 
 
-/* new arrivals 영역 */
+/* new arrivals 영역 ---------------------------*/
 
 
 #section .new_arrivals{
@@ -595,83 +518,8 @@ swiper-slide:first-child .new_txt_area{
     display: flex;
     overflow: hidden;
 }
-#section .new_arrivals .new_product li{
-    width: calc(100% / 4 - 15px); 
-    flex-shrink: 0;
-    margin-right: 10px;
-}
-#section .new_arrivals .new_product li .new_img_area{
-    position: relative;
-}
-#section .new_arrivals .new_product li .new_img_area img{
-    width: 100%;
-    transition: all 0.5s;
-}
-#section .new_arrivals .new_product li .new_img_area img:first-child{
-    position: absolute; top: 0; left: 0;
-}
-#section .new_arrivals .new_product li .new_img_area img:last-child{
-    opacity: 0;
-}
-#section .new_arrivals .new_product li:hover .new_img_area img:first-child{
-    opacity: 0;
-}
-#section .new_arrivals .new_product li:hover .new_img_area img:last-child{
-    opacity: 1;
-}
-
-#section .new_arrivals .new_product li .new_txt_area{
-    padding-TOP: 30px;
-}
-#section .new_arrivals .new_product li .new_txt_area h2{
-    font-size: 15px;
-    font-weight: 600;
-    color: rgb(51, 51, 51);
-}
-#section .new_arrivals .new_product li .new_txt_area .price{
-    display: flex;
-    align-items: center;
-}
-#section .new_arrivals .new_product li .new_txt_area p{
-    font-size: 1.5em;
-    font-weight: 800;
-    margin-top: 5px;
-    color: rgb(43, 43, 43);
-}
-
-#section .new_arrivals .new_product li .new_txt_area .before_p{
-    color: rgb(151, 151, 151);
-    text-decoration: line-through;
-    font-size: 1.1em;
-    font-weight: 600;
-    margin-right: 10px;
-    padding-top: 5px;
-}
-#section .new_arrivals .new_product li .new_txt_area .discount{
-    color: rgb(71, 124, 99);
-    margin-left: 10px;
-}
-#section .new_arrivals .new_product li:first-child .new_txt_area{
-    margin-left: 25px;
-}
 
 
-
-
-#section .new_arrivals  .swiper_wrap{
-    width: 940px;
-    margin: 100px auto 0;
-}
-#section .new_arrivals  .swiper_wrap .swiper_base{
-    width: 100%;
-    height: 3px;
-    background-color: rgb(187, 187, 187);
-}
-#section .new_arrivals .swiper_wrap .swiper_base .bar{
-    width: 12.5%;
-    height: 3px;
-    background-color: rgb(51, 51, 51);
-}
 
 
 
@@ -681,7 +529,7 @@ swiper-slide:first-child .new_txt_area{
 #section .outlet{
     width: 100%;
     background-color: rgb(245, 239, 230);
-    padding: 100px 0 150px;
+    padding: 0px 0 150px;
 }
 #section .outlet_head{
     display: flex;
@@ -698,94 +546,51 @@ swiper-slide:first-child .new_txt_area{
     font-weight: 600;
 }
 
-#section .outlet .outlet_product{
+
+
+/* #section .outlet .outlet_product{
     width: 100%;
     display: flex;
     overflow: hidden;
-}
-#section .outlet .outlet_product li{
+} */
+/* #section .outlet .outlet_product li{
     width: calc(100% / 4 - 15px); 
     flex-shrink: 0;
     margin-right: 10px;
-}
-#section .outlet .outlet_product li .outlet_img_area{
+} */
+
+#section .outlet .mySwiper swiper-slide .img_area{
     background-color: black;
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
 }
-#section .outlet .outlet_product li .outlet_img_area img{
+#section .outlet .mySwiper swiper-slide .img_area img{
     width: 100%;
-    transition: all 0.3s;
 }
-#section .outlet .outlet_product li .outlet_img_area a .over_txt{
+#section .outlet .mySwiper swiper-slide .img_area a .over_txt{
     position: absolute;
-    top: 50%; left: 50%; 
+    top: 100%; left: 50%; 
     text-align: center;
-    color: rgb(228, 227, 215);
+    color: rgb(32, 49, 41);
     font-size: 1.3em;
-    font-weight: 600;
+    font-weight: 500;
     opacity: 0;
     transform: translate(-50%, -50%);
     width: 100%;
     transition: opacity 0.3s;
+    z-index: 10;
+    margin-top: 100px;
 }
-#section .outlet .outlet_product li:hover .outlet_img_area img{
-    opacity: 0.5;
+#section .outlet .mySwiper swiper-slide:hover .img_area img{
     transform: scale(1.1);
 }
-#section .outlet .outlet_product li:hover .outlet_img_area a .over_txt{
+#section .outlet .mySwiper swiper-slide:hover .img_area a .over_txt{
     opacity: 1;
 }
 
-#section .outlet .outlet_product li .outlet_txt_area{
-    padding-TOP: 30px;
-}
-#section .outlet .outlet_product li .outlet_txt_area h2{
-    font-size: 15px;
-    font-weight: 600;
-    color: rgb(51, 51, 51);
-}
-#section .outlet .outlet_product li .outlet_txt_area .price{
-    display: flex;
-    align-items: center;
-}
-#section .outlet .outlet_product li .outlet_txt_area p{
-    font-size: 1.5em;
-    font-weight: 800;
-    margin-top: 5px;
-    color: rgb(43, 43, 43);
-}
 
-#section .outlet .outlet_product li .outlet_txt_area .before_p{
-    color: rgb(151, 151, 151);
-    text-decoration: line-through;
-    font-size: 1.1em;
-    font-weight: 600;
-    margin-right: 10px;
-    padding-top: 5px;
-}
-#section .outlet .outlet_product li .outlet_txt_area .discount{
-    color: rgb(71, 124, 99);
-    margin-left: 10px;
-}
-#section .outlet .outlet_product li:first-child .outlet_txt_area{
-    margin-left: 25px;
-}
 
-#section .outlet  .swiper_wrap{
-    width: 940px;
-    margin: 100px auto 0;
-}
-#section .outlet  .swiper_wrap .swiper_base{
-    width: 100%;
-    height: 3px;
-    background-color: rgb(187, 187, 187);
-}
-#section .outlet .swiper_wrap .swiper_base .bar{
-    width: 12.5%;
-    height: 3px;
-    background-color: rgb(51, 51, 51);
-}
+
 
 /* our 영역 */
 
@@ -1121,34 +926,21 @@ swiper-slide:first-child .new_txt_area{
     /* -----------------------상품섹션 상단 view all 부분 --------------- */
 
     
-    #section .most_popular .most_product li,
-    #section .new_arrivals .new_product li,
-    #section .outlet .outlet_product li{
+    #section .items .mySwiper swiper-slide{
         width: calc(100% / 2 - 30px); 
         margin-right: 5px;
     }
-    #section .most_popular .most_product li:first-child,
-    #section .new_arrivals .new_product li:first-child,
-    #section .outlet .outlet_product li:first-child{
+    #section .items .mySwiper swiper-slide:first-child{
         margin-left: 15px;
     }
 
-    #section .most_popular .most_product li .mo_txt_area p,
-    #section .new_arrivals .new_product li .new_txt_area p,
-    #section .outlet .outlet_product li .outlet_txt_area p{
+    #section .items .mySwiper swiper-slide .txt_area p{
         font-size: 1.3em;
     }
-    #section .most_popular .most_product li:first-child .mo_txt_area,
-    #section .new_arrivals .new_product li:first-child .new_txt_area,
-    #section .outlet .outlet_product li:first-child .outlet_txt_area{
+    #section .items .mySwiper swiper-slide:first-child .txt_area{
         margin-left: 0px;
     }
-    #section .most_popular .swiper_wrap,
-    #section .new_arrivals  .swiper_wrap,
-    #section .outlet  .swiper_wrap{
-        width: 500px;
-        margin: 50px auto 0;
-    }
+
 
 
     /* life 영역------------------------------------- */
@@ -1278,54 +1070,45 @@ swiper-slide:first-child .new_txt_area{
     /* -----------------------상품섹션 상단 view all 부분 --------------- */
 
 
-    #section .items .pro_list li{
+    /* #section .items .pro_list li{
         width: calc(100% / 1.5 - 30px); 
         margin-right: 5px;
+    } */
+    swiper-container {
+        height: 480px;
+        border: 1px solid red;
     }
-    #section .items .pro_list li:first-child{
-        margin-left: 15px;
+    
+    swiper-slide .img_area a .over_txt{
+        font-size: 14px;
     }
-    #section .outlet .outlet_product li .outlet_img_area a .over_txt{
-        font-size: 1em;
-    }
-    #section .most_popular .most_product li .mo_txt_area,
-    #section .new_arrivals .new_product li .new_txt_area,
-    #section .outlet .outlet_product li .outlet_txt_area{
+    #section .items .mySwiper swiper-slide .txt_area{
         padding-right: 10px;
     }
-    #section .most_popular .most_product li .mo_txt_area p,
-    #section .new_arrivals .new_product li .new_txt_area p,
-    #section .outlet .outlet_product li .outlet_txt_area p{
-        font-size: 1em;
+    swiper-slide .txt_area p{
+        font-size: 0.9em;
+        margin-top: 0px;
     }
-    #section .most_popular .most_product li .mo_txt_area .before_p,
-    #section .new_arrivals .new_product li .new_txt_area .before_p,
-    #section .outlet .outlet_product li .outlet_txt_area .before_p{
-        font-size: 0.8em;
+    swiper-slide .txt_area .before_p{
+        font-size: 0.7em;
+        padding-top: 0px;
     }
-    #section .most_popular .most_product li .mo_txt_area h2,
-    #section .new_arrivals .new_product li .new_txt_area h2,
-    #section .outlet .outlet_product li .outlet_txt_area h2{
+    swiper-slide .txt_area h2{
         font-size: 12px;
     }
-    #section .most_popular .most_product li:first-child .mo_txt_area,
-    #section .new_arrivals .new_product li:first-child .new_txt_area,
-    #section .outlet .outlet_product li:first-child .outlet_txt_area{
+    swiper-slide:first-child .txt_area{
         margin-left: 0px;
     }
-    #section .most_popular .most_product li:first-child .mo_txt_area .discount,
-    #section .new_arrivals .new_product li .new_txt_area .discount,
-    #section .outlet .outlet_product li .outlet_txt_area .discount{
-        margin-left: 5px;
-    }
+    swiper-slide .txt_area .discount{
+    color: rgb(71, 124, 99);
+    margin-left: 0px;
+}
+    swiper-slide .txt_area .price{
+    display: block;
+    align-items: start;
+}
 
-    #section .most_popular .swiper_wrap,
-    #section .new_arrivals  .swiper_wrap,
-    #section .outlet  .swiper_wrap{
-        width: 300px;
-        margin: 50px auto 0;
-    }
-
+    
     /* our 영역--------------------------- */
     
     #section .our{
@@ -1364,30 +1147,34 @@ swiper-slide:first-child .new_txt_area{
     #section .life{
         padding: 100px 0 100px;
     }
+    #section .life .life_list{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
     #section .life_head{
         padding: 0 15px 10px;
     }
     #section .life_head .section_title{
         font-size: 1.4em;
     }
+    
     #section .life .life_list li{
-        width: calc(100% / 1.5 - 10px); 
+        width: 100%; 
         flex-shrink: 0;
-        margin-right: 5px;
+        margin-top: 100px;
     }
-    #section .life .life_list li:first-child{
-        margin-left: 10px;
-    }
+    
     
     #section .life .life_list li:first-child .life_txt_area{
         padding-left: 0px;
     }
     #section .life .life_list .life_txt_area{
-        margin-top: 20px;
+        margin-top: 14px;
     }
 
     #section .life .life_list .life_txt_area h2{
-    font-size: 18px;
+    font-size: 16px;
     }
 #se
     #section .life .life_list .life_txt_area p{
