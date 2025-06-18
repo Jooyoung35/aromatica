@@ -332,6 +332,9 @@ body{
     background-color: rgb(245, 239, 230);
     padding: 100px 0 150px;
 }
+#section .most_popular{
+    padding-top: 150px;
+}
 #section .most_head{
     display: flex;
     justify-content: space-between;
@@ -382,24 +385,27 @@ body{
 
 /* 제품 리스트 스와이퍼 공통 적용---------------------------------- */
 swiper-container {
-    height: 950px;
+    height: 800px;
 }
 
 .mySwiper {
     position: relative !important;
     overflow: visible !important;
-    --swiper-pagination-color: rgb(51, 51, 51);
+    /* border: 1px solid red; */
+    position: relative;
+
 }
 
 .mySwiper::part(pagination) {
     position: absolute !important;
-    top: 85% !important;
+    top: 99.5% !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: 50% !important;
     box-sizing: border-box;
     height: 3px !important;
     background: rgb(187, 187, 187) !important; /* 배경은 딱 하나만 써! */
+    z-index: 999;
 }
 
 
@@ -429,7 +435,8 @@ swiper-slide:hover .img_area img:last-child{
     opacity: 1;
 }
 swiper-slide .txt_area{
-    padding-TOP: 30px;
+    padding-top: 30px;
+    padding-left: 10px;
 }
 swiper-slide .txt_area h2{
     font-size: 15px;
@@ -460,7 +467,7 @@ swiper-slide .txt_area .discount{
     margin-left: 10px;
 }
 swiper-slide:first-child .txt_area{
-    margin-left: 25px;
+    /* margin-left: 25px; */
 }
 
 
@@ -484,6 +491,7 @@ swiper-slide:first-child .txt_area{
 
 #section .video_area{
     background-color: rgb(245, 239, 230);
+    padding-bottom: 50px;
 }
 #section .video_area video{
     width: 100%;
@@ -497,7 +505,7 @@ swiper-slide:first-child .txt_area{
 #section .new_arrivals{
     width: 100%;
     background-color: rgb(245, 239, 230);
-    padding: 100px 0 150px;
+    padding: 100px 0 50px;
 }
 #section .new_head{
     display: flex;
@@ -529,7 +537,7 @@ swiper-slide:first-child .txt_area{
 #section .outlet{
     width: 100%;
     background-color: rgb(245, 239, 230);
-    padding: 0px 0 150px;
+    padding: 150px 0 150px;
 }
 #section .outlet_head{
     display: flex;
@@ -999,9 +1007,11 @@ swiper-slide:first-child .txt_area{
 }
 
 
-/* ~767px ------------------------------ */
 
-@media all and (max-width:767px){
+
+/* 600px ~ 767px ------------------------------ */
+
+@media all and (min-width:600px) and (max-width:767px){
     #header .hd_inner{
         padding:  0 10px;
     }
@@ -1075,7 +1085,7 @@ swiper-slide:first-child .txt_area{
         margin-right: 5px;
     } */
     swiper-container {
-        height: 480px;
+        height: 780px;
         border: 1px solid red;
     }
     
@@ -1086,27 +1096,39 @@ swiper-slide:first-child .txt_area{
         padding-right: 10px;
     }
     swiper-slide .txt_area p{
-        font-size: 0.9em;
+        font-size: 18px;
         margin-top: 0px;
     }
     swiper-slide .txt_area .before_p{
-        font-size: 0.7em;
+        font-size: 18px;
         padding-top: 0px;
     }
     swiper-slide .txt_area h2{
-        font-size: 12px;
+        font-size: 18px;
     }
     swiper-slide:first-child .txt_area{
-        margin-left: 0px;
+        /* margin-left: 0px; */
     }
     swiper-slide .txt_area .discount{
+    font-size: 18px;
     color: rgb(71, 124, 99);
     margin-left: 0px;
 }
     swiper-slide .txt_area .price{
+    font-size: 20px;
     display: block;
     align-items: start;
 }
+    .txt_area h2 {
+        font-size: 14px;
+    }
+    .sell_p {
+        font-size: 13px;
+    }
+    .img_area img {
+        width: 100%;
+        height: auto;
+    }
 
     
     /* our 영역--------------------------- */
@@ -1238,6 +1260,520 @@ swiper-slide:first-child .txt_area{
         display: none;
     }
 }
+
+
+
+
+
+
+
+/* 480px ~ 599px ------------------------------ */
+
+@media all  and (min-width:480px) and (max-width:599px){
+    #header .hd_inner{
+        padding:  0 10px;
+    }
+    #header .hd_inner .logo img{
+        width: 180px;
+    }
+    #header .hd_inner .side_menu {
+        justify-content:flex-end;
+    }
+    #header .hd_inner .side_menu .search{
+        display: none;
+    }
+
+
+    #section .main_banner{
+        height: 800px;
+    }
+    #section .main_banner .main_ban_img_area li.bg1{
+    background-image: url(images/2025_MAR_half_main_MO07.jpg);
+    }
+    #section .main_banner .main_ban_img_area li.bg2{
+        background-image: url(images/2025_FEB_half_main_MO0602.jpg);
+    }
+    #section .main_banner .main_ban_img_area li.bg3{
+        background-image: url(images/2025_MAY_half_main_MO_02.jpg);
+    }
+    #section .main_banner .main_ban_img_area li.bg4{
+        background-image: url(images/2025_MAY_half_main_MO_05-2.jpg);
+    }
+    #section .main_banner .main_ban_img_area li.bg5{
+        background-image: url(images/2025_MAY_half_main_MO_03.jpg);
+    }
+
+    #section .main_banner .main_ban_img_area li .ban_txt{
+        top: 50%;
+        left: 10px;
+    }
+    #section .main_banner .main_ban_img_area li .ban_txt .m_banner_title{
+        font-size: 2.6em;
+    }
+    #section .main_banner .main_ban_img_area li .ban_txt h2{
+    font-size: 16px;
+    }
+
+      /* -----------------상품섹션 일괄적용----------------------- */
+    #section .items{
+        padding: 50px 0 100px;
+    }
+    #section .new_arrivals{
+        padding: 50px 0 50px 0;
+    }
+    #section .items .title{
+        padding: 0 15px 10px;
+    }
+    #section .items .title .section_title{
+        font-size: 1.4em;
+    }
+
+    /* -----------------------상품섹션 상단 view all 부분 --------------- */
+    #section > div .view_all{
+        font-size: 0.9em;
+    }
+    #section > div .view_all::after{
+        top: 22px; left: 0;
+    }
+    /* -----------------------상품섹션 상단 view all 부분 --------------- */
+
+
+    /* #section .items .pro_list li{
+        width: calc(100% / 1.5 - 30px); 
+        margin-right: 5px;
+    } */
+    swiper-container {
+        height: 680px;
+        border: 1px solid red;
+    }
+    
+    swiper-slide .img_area a .over_txt{
+        font-size: 14px;
+    }
+    #section .items .mySwiper swiper-slide .txt_area{
+        padding-right: 10px;
+    }
+    swiper-slide .txt_area p{
+        font-size: 18px;
+        margin-top: 0px;
+    }
+    swiper-slide .txt_area .before_p{
+        font-size: 18px;
+        padding-top: 0px;
+    }
+    swiper-slide .txt_area h2{
+        font-size: 18px;
+    }
+    swiper-slide:first-child .txt_area{
+        /* margin-left: 0px; */
+    }
+    swiper-slide .txt_area .discount{
+    font-size: 18px;
+    color: rgb(71, 124, 99);
+    margin-left: 0px;
+}
+    swiper-slide .txt_area .price{
+    font-size: 20px;
+    display: block;
+    align-items: start;
+}
+    .txt_area h2 {
+        font-size: 14px;
+    }
+    .sell_p {
+        font-size: 13px;
+    }
+    .img_area img {
+        width: 100%;
+        height: auto;
+    }
+
+    
+    /* our 영역--------------------------- */
+    
+    #section .our{
+        display: block;
+    }
+    #section .our > li{
+        width: 100%;
+        height: 400px;
+        padding: 100px 0 0 50px ;
+    }
+    #section .our > li h2{
+    font-size: 36px;
+    }
+    #section .our > li p{
+    font-size: 14px;
+    }
+
+
+
+
+    /* refill 영역 */
+
+    #section .refills .sm_txt{
+    font-size: 18px;
+    }
+    #section .refills h2{
+    font-size: 30px;
+    }
+
+
+
+
+
+    /* life 영역----------------------------- */
+    
+    #section .life{
+        padding: 100px 0 100px;
+    }
+    #section .life .life_list{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+    #section .life_head{
+        padding: 0 15px 10px;
+    }
+    #section .life_head .section_title{
+        font-size: 1.4em;
+    }
+    
+    #section .life .life_list li{
+        width: 100%; 
+        flex-shrink: 0;
+        margin-top: 100px;
+    }
+    
+    
+    #section .life .life_list li:first-child .life_txt_area{
+        padding-left: 0px;
+    }
+    #section .life .life_list .life_txt_area{
+        margin-top: 14px;
+    }
+
+    #section .life .life_list .life_txt_area h2{
+    font-size: 16px;
+    }
+#se
+    #section .life .life_list .life_txt_area p{
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+
+    /* sinsa-------------- */
+    #section .sinsa{
+    background-image: url(images/Aromatica_sinsa_MO.jpg);
+    }
+    #section .sinsa .sinsa_txt{
+        padding: 350px 0 100px 10px;
+    }
+    #section .sinsa .sinsa_txt h2{
+        font-size: 2.6em;
+    }
+    #section .sinsa .sinsa_txt p{
+        margin-top: 16px;
+    }
+
+
+    /* 카카오상담 버튼 */
+    #section .kakao{
+        display: none;
+    }
+
+
+
+
+    /* footer ------------------ */
+    #footer{
+        padding-bottom: 10px;
+    }
+    #footer .wrap_foot{
+        padding: 0 20px;
+    }
+    #footer .wrap_foot .foot_top{
+        display: block;
+        margin-bottom: 60px;
+    }
+    #footer .wrap_foot .foot_top .foot_menu{
+        display: block;
+        padding-top: 30px;
+    }
+    #footer .wrap_foot .foot_top .foot_menu > li{
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+    #footer .wrap_foot .foot_top .foot_menu > li h3{
+        font-size: 18px;
+        position: relative;
+    }
+    #footer .wrap_foot .foot_top .foot_menu > li h3::after{
+        content: "\002B";
+        position: absolute;
+        right: 0px;
+    }
+    #footer .wrap_foot .foot_top .foot_menu > li > ul{
+        display: none;
+    }
+}
+
+
+
+
+/*  ~ 479px ------------------------------ */
+
+@media all  and (max-width:479px){
+    #header .hd_inner{
+        padding:  0 10px;
+    }
+    #header .hd_inner .logo img{
+        width: 180px;
+    }
+    #header .hd_inner .side_menu {
+        justify-content:flex-end;
+    }
+    #header .hd_inner .side_menu .search{
+        display: none;
+    }
+
+
+    #section .main_banner{
+        height: 800px;
+    }
+    #section .main_banner .main_ban_img_area li.bg1{
+    background-image: url(images/2025_MAR_half_main_MO07.jpg);
+    }
+    #section .main_banner .main_ban_img_area li.bg2{
+        background-image: url(images/2025_FEB_half_main_MO0602.jpg);
+    }
+    #section .main_banner .main_ban_img_area li.bg3{
+        background-image: url(images/2025_MAY_half_main_MO_02.jpg);
+    }
+    #section .main_banner .main_ban_img_area li.bg4{
+        background-image: url(images/2025_MAY_half_main_MO_05-2.jpg);
+    }
+    #section .main_banner .main_ban_img_area li.bg5{
+        background-image: url(images/2025_MAY_half_main_MO_03.jpg);
+    }
+
+    #section .main_banner .main_ban_img_area li .ban_txt{
+        top: 50%;
+        left: 10px;
+    }
+    #section .main_banner .main_ban_img_area li .ban_txt .m_banner_title{
+        font-size: 2.6em;
+    }
+    #section .main_banner .main_ban_img_area li .ban_txt h2{
+    font-size: 16px;
+    }
+
+      /* -----------------상품섹션 일괄적용----------------------- */
+    #section .items{
+        padding: 50px 0 100px;
+    }
+    #section .new_arrivals{
+        padding: 50px 0 50px 0;
+    }
+    #section .items .title{
+        padding: 0 15px 10px;
+    }
+    #section .items .title .section_title{
+        font-size: 1.4em;
+    }
+
+    /* -----------------------상품섹션 상단 view all 부분 --------------- */
+    #section > div .view_all{
+        font-size: 0.9em;
+    }
+    #section > div .view_all::after{
+        top: 22px; left: 0;
+    }
+    /* -----------------------상품섹션 상단 view all 부분 --------------- */
+
+
+    /* #section .items .pro_list li{
+        width: calc(100% / 1.5 - 30px); 
+        margin-right: 5px;
+    } */
+    swiper-container {
+        height: 930px;
+        border: 1px solid red;
+    }
+    
+    swiper-slide .img_area a .over_txt{
+        font-size: 14px;
+    }
+    #section .items .mySwiper swiper-slide .txt_area{
+        padding-right: 10px;
+    }
+    swiper-slide .txt_area p{
+        font-size: 18px;
+        margin-top: 0px;
+    }
+    swiper-slide .txt_area .before_p{
+        font-size: 18px;
+        padding-top: 0px;
+    }
+    swiper-slide .txt_area h2{
+        font-size: 18px;
+    }
+    swiper-slide:first-child .txt_area{
+        /* margin-left: 0px; */
+    }
+    swiper-slide .txt_area .discount{
+    font-size: 18px;
+    color: rgb(71, 124, 99);
+    margin-left: 0px;
+}
+    swiper-slide .txt_area .price{
+    font-size: 20px;
+    display: block;
+    align-items: start;
+}
+    .txt_area h2 {
+        font-size: 14px;
+    }
+    .sell_p {
+        font-size: 13px;
+    }
+    .img_area img {
+        width: 100%;
+        height: auto;
+    }
+
+    
+    /* our 영역--------------------------- */
+    
+    #section .our{
+        display: block;
+    }
+    #section .our > li{
+        width: 100%;
+        height: 400px;
+        padding: 100px 0 0 50px ;
+    }
+    #section .our > li h2{
+    font-size: 36px;
+    }
+    #section .our > li p{
+    font-size: 14px;
+    }
+
+
+
+
+    /* refill 영역 */
+
+    #section .refills .sm_txt{
+    font-size: 18px;
+    }
+    #section .refills h2{
+    font-size: 30px;
+    }
+
+
+
+
+
+    /* life 영역----------------------------- */
+    
+    #section .life{
+        padding: 100px 0 100px;
+    }
+    #section .life .life_list{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+    #section .life_head{
+        padding: 0 15px 10px;
+    }
+    #section .life_head .section_title{
+        font-size: 1.4em;
+    }
+    
+    #section .life .life_list li{
+        width: 100%; 
+        flex-shrink: 0;
+        margin-top: 100px;
+    }
+    
+    
+    #section .life .life_list li:first-child .life_txt_area{
+        padding-left: 0px;
+    }
+    #section .life .life_list .life_txt_area{
+        margin-top: 14px;
+    }
+
+    #section .life .life_list .life_txt_area h2{
+    font-size: 16px;
+    }
+#se
+    #section .life .life_list .life_txt_area p{
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+
+    /* sinsa-------------- */
+    #section .sinsa{
+    background-image: url(images/Aromatica_sinsa_MO.jpg);
+    }
+    #section .sinsa .sinsa_txt{
+        padding: 350px 0 100px 10px;
+    }
+    #section .sinsa .sinsa_txt h2{
+        font-size: 2.6em;
+    }
+    #section .sinsa .sinsa_txt p{
+        margin-top: 16px;
+    }
+
+
+    /* 카카오상담 버튼 */
+    #section .kakao{
+        display: none;
+    }
+
+
+
+
+    /* footer ------------------ */
+    #footer{
+        padding-bottom: 10px;
+    }
+    #footer .wrap_foot{
+        padding: 0 20px;
+    }
+    #footer .wrap_foot .foot_top{
+        display: block;
+        margin-bottom: 60px;
+    }
+    #footer .wrap_foot .foot_top .foot_menu{
+        display: block;
+        padding-top: 30px;
+    }
+    #footer .wrap_foot .foot_top .foot_menu > li{
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+    #footer .wrap_foot .foot_top .foot_menu > li h3{
+        font-size: 18px;
+        position: relative;
+    }
+    #footer .wrap_foot .foot_top .foot_menu > li h3::after{
+        content: "\002B";
+        position: absolute;
+        right: 0px;
+    }
+    #footer .wrap_foot .foot_top .foot_menu > li > ul{
+        display: none;
+    }
+}
+
 
 
 

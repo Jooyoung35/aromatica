@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->
+    
     <script>
     $(document).ready(function(){
         
@@ -247,7 +248,10 @@
                 <h1 class="section_title">Most Popular</h1>
                 <a href="#"><p class="view_all">view all</p></a>
             </div>
-            <swiper-container class="mySwiper" slides-per-view="4" space-between="10"  pagination="true"  pagination-type="progressbar">
+            <swiper-container class="mySwiper" pagination pagination-type="progressbar" style="
+            --swiper-theme-color: rgb(51, 51, 51);
+            --swiper-pagination-progressbar-bg-color:#bbb;
+            ">
                 <swiper-slide>
                     <div class="img_area">
                         <a href="#">
@@ -399,7 +403,10 @@
                 <h1 class="section_title">New Arrivals</h1>
                 <a href="#"><p class="view_all">view all</p></a>
             </div>
-            <swiper-container class="mySwiper" slides-per-view="4" space-between="10"  pagination="true"  pagination-type="progressbar">
+            <swiper-container class="mySwiper" pagination pagination-type="progressbar" style="
+            --swiper-theme-color: rgb(51, 51, 51);
+            --swiper-pagination-progressbar-bg-color:#bbb;
+            ">
                 <swiper-slide>
                     <div class="img_area">
                         <a href="#">
@@ -559,7 +566,10 @@
                 <h1 class="section_title">Spring Outlet</h1>
                 <a href="#"><p class="view_all">view all</p></a>
             </div>
-            <swiper-container class="mySwiper" slides-per-view="4" space-between="10"  pagination="true"  pagination-type="progressbar">
+            <swiper-container class="mySwiper" pagination pagination-type="progressbar" style="
+            --swiper-theme-color: rgb(51, 51, 51);
+            --swiper-pagination-progressbar-bg-color:#bbb;
+            ">
                 <swiper-slide>
                     <div class="img_area">
                         <a href="#">
@@ -823,6 +833,33 @@
 <script type="module" src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
 
+<script type="module">
+    import { register } from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.mjs';
+    register();
 
+const swipers = document.querySelectorAll('.mySwiper');
+
+function updateSlidesPerView() {
+    const width = window.innerWidth;
+    let slidesPerView = 4;
+    if (width < 480) slidesPerView = 1;
+    else if (width < 768) slidesPerView = 2;
+    else if (width < 1024) slidesPerView = 3;
+
+    swipers.forEach(swiper => {
+        swiper.setAttribute('slides-per-view', slidesPerView);
+        swiper.setAttribute('space-between', '10');
+        swiper.setAttribute('pagination', 'true');
+        swiper.setAttribute('pagination-type', 'progressbar');
+    });
+}
+
+updateSlidesPerView();
+
+window.addEventListener('resize', () => {
+    updateSlidesPerView();
+});
+
+</script>
 </body>
 </html>
