@@ -47,7 +47,7 @@ body{
 /* lnb 영역-------------- */
 
 #header .lnb_wrap{
-    width: 20%;
+    width: 320px;
     height: 100%;
     position: fixed;
     /* z-index: 5; */
@@ -68,10 +68,10 @@ body{
     width: 100%;
     height: 50px;
     line-height: 50px;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 500;
     display: block;
-    color: rgb(17, 27, 17);
+    color: rgb(25, 36, 25);
 }
 #header .lnb_wrap .lnb .lnb_sub{
     margin: 10px 0 40px;
@@ -187,6 +187,7 @@ body{
 }
 #header .hd_inner .side_menu li{
     margin-left: 10px;
+    cursor: pointer;
 }
 #header .hd_inner .side_menu .search{
     margin-right: 40px;
@@ -265,14 +266,7 @@ body{
     object-fit: cover;
 }
 /* ---------------------------------------- */
-/* #section .main_banner .main_ban_img_area li{
-    width: 20%;
-    height: 923px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-} */
+
 #section .main_banner .mainSwiper .bg1{
     background-image: url(images/main_01.jpg);
 }
@@ -318,13 +312,13 @@ body{
     letter-spacing: -1px;
     margin-top: 10px;
 }
-/* #section .main_banner .mainSwiper .slide .ban_txt div{
+#section .main_banner .mainSwiper .slide .ban_txt div{
     margin-top: 40px;
 }
-#section .main_banner .mainSwiper .ban_txt em{
+#section .main_banner .mainSwiper .slide .ban_txt em{
     position: relative;
 }
-#section .main_banner .mainSwiper .ban_txt em::after{
+#section .main_banner .mainSwiper .slide .ban_txt em::after{
     content: "";
     display: block;
     width: 70px;
@@ -335,7 +329,7 @@ body{
     transition:  transform 0.5s;
     transform-origin: 0 0;
     transform: scaleX(1);
-} */
+}
 #section .main_banner .mainSwiper .slide:hover .ban_txt em::after{
     transform: scaleX(0);
     transform-origin: 100% 0;
@@ -387,10 +381,9 @@ body{
     align-items: baseline;
     padding: 0 40px 30px;
 }
-#section .most_head .section_title{
-    font-size: 2.2em;
-    font-weight: 600;
-    color: rgb(49, 49, 49);
+#section .items .title .section_title{
+    font-size: 36px;
+    font-weight: 500;
 }
 #section .most_head .view_all{
     font-weight: 600;
@@ -430,14 +423,12 @@ body{
 
 
 /* 제품 리스트 스와이퍼 공통 적용---------------------------------- */
-swiper-container {
-    /* height: 820px; */
-}
+
 
 .itemSwiper {
     position: relative !important;
     overflow: visible !important;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
 }
 
@@ -456,7 +447,7 @@ swiper-container {
 }
 .swiper-pagination{
     margin-top: 50px;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 
@@ -507,7 +498,7 @@ swiper-container {
     color: rgb(43, 43, 43);
 }
 
-.item-slidee .txt_area .before_p{
+.item-slide .txt_area .before_p{
     color: rgb(151, 151, 151);
     text-decoration: line-through;
     font-size: 1.1em;
@@ -590,7 +581,7 @@ swiper-container {
 #section .outlet{
     width: 100%;
     background-color: rgb(245, 239, 230);
-    padding: 150px 0 150px;
+    padding: 70px 0 150px;
 }
 #section .outlet_head{
     display: flex;
@@ -620,34 +611,22 @@ swiper-container {
     margin-right: 10px;
 } */
 
-#section .outlet .mySwiper swiper-slide .img_area{
+
+/* 아울렛 아이템 영역 호버시 확대 효과 */
+/* #section .outlet .itemSwiper .item-slide .img_area{
     background-color: black;
     position: relative;
     overflow: hidden;
 }
-#section .outlet .mySwiper swiper-slide .img_area img{
+#section .outlet .itemSwiper .item-slide .img_area img{
     width: 100%;
 }
-#section .outlet .mySwiper swiper-slide .img_area a .over_txt{
-    position: absolute;
-    top: 100%; left: 50%; 
-    text-align: center;
-    color: rgb(32, 49, 41);
-    font-size: 1.3em;
-    font-weight: 500;
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    transition: opacity 0.3s;
-    z-index: 10;
-    margin-top: 100px;
-}
-#section .outlet .mySwiper swiper-slide:hover .img_area img{
+#section .outlet .itemSwiper .item-slide:hover .img_area img{
     transform: scale(1.1);
 }
-#section .outlet .mySwiper swiper-slide:hover .img_area a .over_txt{
+#section .outlet .itemSwiper .item-slide:hover .img_area a .over_txt{
     opacity: 1;
-}
+} */
 
 
 
@@ -808,6 +787,7 @@ swiper-container {
 
 #section .life .life_list .life_txt_area{
     margin-top: 30px;
+    margin-left: 10px;
 }
 #section .life .life_list .life_txt_area h2{
     font-size: 20px;
@@ -818,7 +798,7 @@ swiper-container {
     margin-top: 20px;
 }
 #section .life .life_list li:first-child .life_txt_area{
-    padding-left: 25px;
+    /* padding-left: 25px; */
 }
 
 
@@ -876,6 +856,8 @@ swiper-container {
     bottom: 30px;
     right: 20px;
     animation: talk 1.8s infinite;
+    z-index: 999;
+    cursor: pointer;
 }
 
 
@@ -924,6 +906,7 @@ swiper-container {
     font-size: 16.5px;
     color: rgb(12, 68, 33);
     margin-bottom: 10px;
+    cursor: pointer;
 }
 #footer .wrap_foot .foot_top .foot_menu > li li{
     margin-top: 3px;
@@ -953,9 +936,9 @@ swiper-container {
 
 
 
-/* 768px ~ 1280px ------------------------------ */
+/* 900px ~ 1159px ------------------------------ */
 
-@media all and (min-width:768px) and (max-width:1280px){
+@media all and (min-width:900px) and (max-width:1159px){
 
 
     /* -----------------상품섹션 일괄적용----------------------- */
@@ -966,41 +949,15 @@ swiper-container {
     #section .new_arrivals{
         padding: 100px 0 0 0;
     }
-    #section .most_popular .most_head,
-    #section .new_head,
-    #section .outlet_head{
-        padding: 0 15px 10px;
+    #section .items .title{
+        padding: 0 15px 0;
     }
-    #section .most_popular .most_head .section_title,
-    #section .new_head .section_title,
-    #section .outlet_head .section_title{
-        font-size: 1.4em;
+    #section .items .title .section_title{
+        margin-left: 10px;
+        margin-bottom: 20px;
     }
     
-    /* -----------------------상품섹션 상단 view all 부분 --------------- */
-    #section > div .view_all{
-        font-size: 1em;
-    }
-    #section > div .view_all::after{
-        top: 22px; left: 0;
-    }
-    /* -----------------------상품섹션 상단 view all 부분 --------------- */
-
     
-    #section .items .mySwiper swiper-slide{
-        width: calc(100% / 2 - 30px); 
-        margin-right: 5px;
-    }
-    #section .items .mySwiper swiper-slide:first-child{
-        margin-left: 15px;
-    }
-
-    #section .items .mySwiper swiper-slide .txt_area p{
-        font-size: 1.3em;
-    }
-    #section .items .mySwiper swiper-slide:first-child .txt_area{
-        margin-left: 0px;
-    }
 
 
 
@@ -1015,15 +972,10 @@ swiper-container {
         font-size: 1.4em;
     }
     #section .life .life_list li{
-        width: calc(100% / 2 - 15px ); 
+        width: calc(100% / 2 ); 
         margin-right: 5px;
     }
-    #section .life .life_list li:first-child{
-        margin-left: 15px;
-    }
-    #section .life .life_list li:first-child .life_txt_area{
-        padding-left: 0px;
-    }
+    
 
 
     /* footer 영역------------------ */
@@ -1062,9 +1014,9 @@ swiper-container {
 
 
 
-/* 600px ~ 767px ------------------------------ */
+/* 768px ~ 899px ------------------------------ */
 
-@media all and (min-width:600px) and (max-width:767px){
+@media all and (min-width:768px) and (max-width:899px){
     #header .hd_inner{
         padding:  0 10px;
     }
@@ -1080,34 +1032,50 @@ swiper-container {
 
 
     #section .main_banner{
-        height: 800px;
+        height: 750px;
     }
-    #section .main_banner .main_ban_img_area li.bg1{
-    background-image: url(images/2025_MAR_half_main_MO07.jpg);
+    #section .main_banner .mainSwiper .bg1{
+        background-image: url(images/main_01_m.jpg);
     }
-    #section .main_banner .main_ban_img_area li.bg2{
-        background-image: url(images/2025_FEB_half_main_MO0602.jpg);
+    #section .main_banner .mainSwiper .bg2{
+        background-image: url(images/main_02_m.jpg);
     }
-    #section .main_banner .main_ban_img_area li.bg3{
-        background-image: url(images/2025_MAY_half_main_MO_02.jpg);
+    #section .main_banner .mainSwiper .bg3{
+        background-image: url(images/main_03_m.jpg);
     }
-    #section .main_banner .main_ban_img_area li.bg4{
-        background-image: url(images/2025_MAY_half_main_MO_05-2.jpg);
+    #section .main_banner .mainSwiper .bg4{
+        background-image: url(images/main_04_m.jpg);
     }
-    #section .main_banner .main_ban_img_area li.bg5{
-        background-image: url(images/2025_MAY_half_main_MO_03.jpg);
+    #section .main_banner .mainSwiper .bg5{
+        background-image: url(images/main_05_m.jpg);
+    }
+    #section .main_banner .mainSwiper .bg6{
+        background-image: url(images/main_06_m.jpg);
+    }
+    #section .main_banner .mainSwiper .bg7{
+        background-image: url(images/main_07_m.jpg);
     }
 
-    #section .main_banner .main_ban_img_area li .ban_txt{
+    #section .main_banner .mainSwiper .slide .ban_txt{
         top: 50%;
-        left: 10px;
+        left: 20px;
     }
-    #section .main_banner .main_ban_img_area li .ban_txt .m_banner_title{
-        font-size: 2.6em;
+    #section .main_banner .mainSwiper .slide .ban_txt .m_banner_title{
+        font-size: 36px;
     }
-    #section .main_banner .main_ban_img_area li .ban_txt h2{
-    font-size: 16px;
+    #section .main_banner .mainSwiper .slide .ban_txt h2{
+        font-size: 14px;
     }
+    #section .main_banner .mainSwiper .slide .ban_txt em{
+        font-size: 14px;
+    }
+
+    #section .main_banner .mainSwiper .slide .ban_txt em::after{
+        width: 60px;
+        top: 22px;
+    }
+
+
 
       /* -----------------상품섹션 일괄적용----------------------- */
     #section .items{
@@ -1133,50 +1101,34 @@ swiper-container {
     /* -----------------------상품섹션 상단 view all 부분 --------------- */
 
 
-    /* #section .items .pro_list li{
-        width: calc(100% / 1.5 - 30px); 
-        margin-right: 5px;
-    } */
-    swiper-container {
-        height: 780px;
-        border: 1px solid red;
-    }
     
-    swiper-slide .img_area a .over_txt{
+
+    .itemSwiper::part(pagination) {
+        bottom:50px;
+    }
+        
+    #section .items .itemSwiper .item-slide .txt_area{
+        /* border: 1px solid red; */
+    }
+    #section .items .itemSwiper .item-slide .txt_area h2{
         font-size: 14px;
     }
-    #section .items .mySwiper swiper-slide .txt_area{
-        padding-right: 10px;
+    #section .items .itemSwiper .item-slide .txt_area .price{
+        font-size: 16px;
+        margin-top: 10px;
+        line-height: 16px;
+        flex-wrap: wrap;
     }
-    swiper-slide .txt_area p{
-        font-size: 18px;
-        margin-top: 0px;
-    }
-    swiper-slide .txt_area .before_p{
-        font-size: 18px;
+    #section .items .itemSwiper .item-slide .txt_area .price .before_p{
+        font-size: 14px;
         padding-top: 0px;
+        padding-right: 120px;
     }
-    swiper-slide .txt_area h2{
+    #section .items .itemSwiper .item-slide .txt_area .price .sell_p {
+        font-size: 20px;
+    }
+    #section .items .itemSwiper .item-slide .txt_area .price .discount{
         font-size: 18px;
-    }
-    swiper-slide:first-child .txt_area{
-        /* margin-left: 0px; */
-    }
-    swiper-slide .txt_area .discount{
-    font-size: 18px;
-    color: rgb(71, 124, 99);
-    margin-left: 0px;
-}
-    swiper-slide .txt_area .price{
-    font-size: 20px;
-    display: block;
-    align-items: start;
-}
-    .txt_area h2 {
-        font-size: 14px;
-    }
-    .sell_p {
-        font-size: 13px;
     }
     .img_area img {
         width: 100%;
@@ -1184,6 +1136,208 @@ swiper-container {
     }
 
     
+    /* our 영역--------------------------- */
+    
+    #section .our{
+        display: block;
+    }
+    #section .our > li{
+        width: 100%;
+        height: 400px;
+        padding: 100px 0 0 50px ;
+    }
+    #section .our > li h2{
+    font-size: 36px;
+    }
+    #section .our > li p{
+    font-size: 14px;
+    }
+
+
+
+
+    /* refill 영역 */
+
+    #section .refills .sm_txt{
+    font-size: 18px;
+    }
+    #section .refills h2{
+    font-size: 30px;
+    }
+
+
+
+
+
+    /* life 영역----------------------------- */
+    
+    #section .life{
+        padding: 100px 0 100px;
+    }
+    
+    #section .life_head{
+        padding: 0 15px 10px;
+    }
+    #section .life_head .section_title{
+        font-size: 1.4em;
+    }
+    #section .life .life_list li{
+        width: calc(100% / 2 ); 
+        margin-right: 5px;
+    }
+    
+    #section .life .life_list li:first-child .life_txt_area{
+        padding-left: 0px;
+    }
+    #section .life .life_list .life_txt_area{
+        margin-top: 14px;
+    }
+
+    #section .life .life_list .life_txt_area h2{
+    font-size: 16px;
+    }
+    #section .life .life_list .life_txt_area p{
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+
+    /* sinsa-------------- */
+    #section .sinsa{
+        background-image: url(images/Aromatica_sinsa_MO.jpg);
+    }
+    #section .sinsa .sinsa_txt{
+        padding: 350px 0 100px 10px;
+    }
+    #section .sinsa .sinsa_txt h2{
+        font-size: 36px;
+    }
+    #section .sinsa .sinsa_txt p{
+        margin-top: 16px;
+        font-size: 14px;
+    }
+    #section .sinsa .sinsa_txt > em{
+        font-size: 14px;
+    }
+    #section .sinsa .sinsa_txt em::after{
+        width: 60px;
+        top: 22px;
+    }
+
+
+
+
+
+    /* 카카오상담 버튼 */
+    #section .kakao{
+        display: none;
+    }
+
+
+
+
+    /* footer ------------------ */
+    #footer{
+        padding-bottom: 10px;
+    }
+    #footer .wrap_foot{
+        padding: 0 20px;
+    }
+    #footer .wrap_foot .foot_top{
+        display: block;
+        margin-bottom: 60px;
+    }
+    #footer .wrap_foot .foot_top .foot_menu{
+        display: block;
+        padding-top: 30px;
+    }
+    #footer .wrap_foot .foot_top .foot_menu > li{
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+    #footer .wrap_foot .foot_top .foot_menu > li h3{
+        font-size: 18px;
+        position: relative;
+    }
+    #footer .wrap_foot .foot_top .foot_menu > li h3::after{
+        content: "\002B";
+        position: absolute;
+        right: 0px;
+    }
+    #footer .wrap_foot .foot_top .foot_menu > li > ul{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+/*  ~ 767px ------------------------------ */
+
+@media all  and (max-width:767px){
+    #header .hd_inner{
+        padding:  0 10px;
+    }
+    #header .hd_inner .logo img{
+        width: 180px;
+    }
+    #header .hd_inner .side_menu {
+        justify-content:flex-end;
+    }
+    #header .hd_inner .side_menu .search{
+        display: none;
+    }
+
+    /* 메인 배너 영역------- */
+    #section .main_banner{
+        height: 750px;
+    }
+    #section .main_banner .mainSwiper .bg1{
+        background-image: url(images/main_01_m.jpg);
+    }
+    #section .main_banner .mainSwiper .bg2{
+        background-image: url(images/main_02_m.jpg);
+    }
+    #section .main_banner .mainSwiper .bg3{
+        background-image: url(images/main_03_m.jpg);
+    }
+    #section .main_banner .mainSwiper .bg4{
+        background-image: url(images/main_04_m.jpg);
+    }
+    #section .main_banner .mainSwiper .bg5{
+        background-image: url(images/main_05_m.jpg);
+    }
+    #section .main_banner .mainSwiper .bg6{
+        background-image: url(images/main_06_m.jpg);
+    }
+    #section .main_banner .mainSwiper .bg7{
+        background-image: url(images/main_07_m.jpg);
+    }
+
+    #section .main_banner .mainSwiper .slide .ban_txt{
+        top: 50%;
+        left: 20px;
+    }
+    #section .main_banner .mainSwiper .slide .ban_txt .m_banner_title{
+        font-size: 36px;
+    }
+    #section .main_banner .mainSwiper .slide .ban_txt h2{
+        font-size: 14px;
+    }
+    #section .main_banner .mainSwiper .slide .ban_txt em{
+        font-size: 14px;
+    }
+
+    #section .main_banner .mainSwiper .slide .ban_txt em::after{
+        width: 60px;
+        top: 22px;
+    }
+    
+/* 여기까지함-------------------------------------------------------------------------------------- */
+
     /* our 영역--------------------------- */
     
     #section .our{
@@ -1315,517 +1469,6 @@ swiper-container {
 }
 
 
-
-
-
-
-
-/* 480px ~ 599px ------------------------------ */
-
-@media all  and (min-width:480px) and (max-width:599px){
-    #header .hd_inner{
-        padding:  0 10px;
-    }
-    #header .hd_inner .logo img{
-        width: 180px;
-    }
-    #header .hd_inner .side_menu {
-        justify-content:flex-end;
-    }
-    #header .hd_inner .side_menu .search{
-        display: none;
-    }
-
-
-    #section .main_banner{
-        height: 800px;
-    }
-    #section .main_banner .main_ban_img_area li.bg1{
-    background-image: url(images/2025_MAR_half_main_MO07.jpg);
-    }
-    #section .main_banner .main_ban_img_area li.bg2{
-        background-image: url(images/2025_FEB_half_main_MO0602.jpg);
-    }
-    #section .main_banner .main_ban_img_area li.bg3{
-        background-image: url(images/2025_MAY_half_main_MO_02.jpg);
-    }
-    #section .main_banner .main_ban_img_area li.bg4{
-        background-image: url(images/2025_MAY_half_main_MO_05-2.jpg);
-    }
-    #section .main_banner .main_ban_img_area li.bg5{
-        background-image: url(images/2025_MAY_half_main_MO_03.jpg);
-    }
-
-    #section .main_banner .main_ban_img_area li .ban_txt{
-        top: 50%;
-        left: 10px;
-    }
-    #section .main_banner .main_ban_img_area li .ban_txt .m_banner_title{
-        font-size: 2.6em;
-    }
-    #section .main_banner .main_ban_img_area li .ban_txt h2{
-    font-size: 16px;
-    }
-
-      /* -----------------상품섹션 일괄적용----------------------- */
-    #section .items{
-        padding: 50px 0 100px;
-    }
-    #section .new_arrivals{
-        padding: 50px 0 50px 0;
-    }
-    #section .items .title{
-        padding: 0 15px 10px;
-    }
-    #section .items .title .section_title{
-        font-size: 1.4em;
-    }
-
-    /* -----------------------상품섹션 상단 view all 부분 --------------- */
-    #section > div .view_all{
-        font-size: 0.9em;
-    }
-    #section > div .view_all::after{
-        top: 22px; left: 0;
-    }
-    /* -----------------------상품섹션 상단 view all 부분 --------------- */
-
-
-    /* #section .items .pro_list li{
-        width: calc(100% / 1.5 - 30px); 
-        margin-right: 5px;
-    } */
-    swiper-container {
-        height: 680px;
-        border: 1px solid red;
-    }
-    
-    swiper-slide .img_area a .over_txt{
-        font-size: 14px;
-    }
-    #section .items .mySwiper swiper-slide .txt_area{
-        padding-right: 10px;
-    }
-    swiper-slide .txt_area p{
-        font-size: 18px;
-        margin-top: 0px;
-    }
-    swiper-slide .txt_area .before_p{
-        font-size: 18px;
-        padding-top: 0px;
-    }
-    swiper-slide .txt_area h2{
-        font-size: 18px;
-    }
-    swiper-slide:first-child .txt_area{
-        /* margin-left: 0px; */
-    }
-    swiper-slide .txt_area .discount{
-    font-size: 18px;
-    color: rgb(71, 124, 99);
-    margin-left: 0px;
-}
-    swiper-slide .txt_area .price{
-    font-size: 20px;
-    display: block;
-    align-items: start;
-}
-    .txt_area h2 {
-        font-size: 14px;
-    }
-    .sell_p {
-        font-size: 13px;
-    }
-    .img_area img {
-        width: 100%;
-        height: auto;
-    }
-
-    
-    /* our 영역--------------------------- */
-    
-    #section .our{
-        display: block;
-    }
-    #section .our > li{
-        width: 100%;
-        height: 400px;
-        padding: 100px 0 0 50px ;
-    }
-    #section .our > li h2{
-    font-size: 36px;
-    }
-    #section .our > li p{
-    font-size: 14px;
-    }
-
-
-
-
-    /* refill 영역 */
-
-    #section .refills .sm_txt{
-    font-size: 18px;
-    }
-    #section .refills h2{
-    font-size: 30px;
-    }
-
-
-
-
-
-    /* life 영역----------------------------- */
-    
-    #section .life{
-        padding: 100px 0 100px;
-    }
-    #section .life .life_list{
-    width: 100%;
-    display: block;
-    overflow: hidden;
-}
-    #section .life_head{
-        padding: 0 15px 10px;
-    }
-    #section .life_head .section_title{
-        font-size: 1.4em;
-    }
-    
-    #section .life .life_list li{
-        width: 100%; 
-        flex-shrink: 0;
-        margin-top: 100px;
-    }
-    
-    
-    #section .life .life_list li:first-child .life_txt_area{
-        padding-left: 0px;
-    }
-    #section .life .life_list .life_txt_area{
-        margin-top: 14px;
-    }
-
-    #section .life .life_list .life_txt_area h2{
-    font-size: 16px;
-    }
-#se
-    #section .life .life_list .life_txt_area p{
-        font-size: 14px;
-        margin-top: 10px;
-    }
-
-
-    /* sinsa-------------- */
-    #section .sinsa{
-    background-image: url(images/Aromatica_sinsa_MO.jpg);
-    }
-    #section .sinsa .sinsa_txt{
-        padding: 350px 0 100px 10px;
-    }
-    #section .sinsa .sinsa_txt h2{
-        font-size: 2.6em;
-    }
-    #section .sinsa .sinsa_txt p{
-        margin-top: 16px;
-    }
-
-
-    /* 카카오상담 버튼 */
-    #section .kakao{
-        display: none;
-    }
-
-
-
-
-    /* footer ------------------ */
-    #footer{
-        padding-bottom: 10px;
-    }
-    #footer .wrap_foot{
-        padding: 0 20px;
-    }
-    #footer .wrap_foot .foot_top{
-        display: block;
-        margin-bottom: 60px;
-    }
-    #footer .wrap_foot .foot_top .foot_menu{
-        display: block;
-        padding-top: 30px;
-    }
-    #footer .wrap_foot .foot_top .foot_menu > li{
-        margin-top: 20px;
-        margin-left: 0px;
-    }
-    #footer .wrap_foot .foot_top .foot_menu > li h3{
-        font-size: 18px;
-        position: relative;
-    }
-    #footer .wrap_foot .foot_top .foot_menu > li h3::after{
-        content: "\002B";
-        position: absolute;
-        right: 0px;
-    }
-    #footer .wrap_foot .foot_top .foot_menu > li > ul{
-        display: none;
-    }
-}
-
-
-
-
-/*  ~ 479px ------------------------------ */
-
-@media all  and (max-width:479px){
-    #header .hd_inner{
-        padding:  0 10px;
-    }
-    #header .hd_inner .logo img{
-        width: 180px;
-    }
-    #header .hd_inner .side_menu {
-        justify-content:flex-end;
-    }
-    #header .hd_inner .side_menu .search{
-        display: none;
-    }
-
-
-    #section .main_banner{
-        height: 800px;
-    }
-    #section .main_banner .main_ban_img_area li.bg1{
-    background-image: url(images/2025_MAR_half_main_MO07.jpg);
-    }
-    #section .main_banner .main_ban_img_area li.bg2{
-        background-image: url(images/2025_FEB_half_main_MO0602.jpg);
-    }
-    #section .main_banner .main_ban_img_area li.bg3{
-        background-image: url(images/2025_MAY_half_main_MO_02.jpg);
-    }
-    #section .main_banner .main_ban_img_area li.bg4{
-        background-image: url(images/2025_MAY_half_main_MO_05-2.jpg);
-    }
-    #section .main_banner .main_ban_img_area li.bg5{
-        background-image: url(images/2025_MAY_half_main_MO_03.jpg);
-    }
-
-    #section .main_banner .main_ban_img_area li .ban_txt{
-        top: 50%;
-        left: 10px;
-    }
-    #section .main_banner .main_ban_img_area li .ban_txt .m_banner_title{
-        font-size: 2.6em;
-    }
-    #section .main_banner .main_ban_img_area li .ban_txt h2{
-    font-size: 16px;
-    }
-
-      /* -----------------상품섹션 일괄적용----------------------- */
-    #section .items{
-        padding: 50px 0 100px;
-    }
-    #section .new_arrivals{
-        padding: 50px 0 50px 0;
-    }
-    #section .items .title{
-        padding: 0 15px 10px;
-    }
-    #section .items .title .section_title{
-        font-size: 1.4em;
-    }
-
-    /* -----------------------상품섹션 상단 view all 부분 --------------- */
-    #section > div .view_all{
-        font-size: 0.9em;
-    }
-    #section > div .view_all::after{
-        top: 22px; left: 0;
-    }
-    /* -----------------------상품섹션 상단 view all 부분 --------------- */
-
-
-    /* #section .items .pro_list li{
-        width: calc(100% / 1.5 - 30px); 
-        margin-right: 5px;
-    } */
-    swiper-container {
-        height: 930px;
-        border: 1px solid red;
-    }
-    
-    swiper-slide .img_area a .over_txt{
-        font-size: 14px;
-    }
-    #section .items .mySwiper swiper-slide .txt_area{
-        padding-right: 10px;
-    }
-    swiper-slide .txt_area p{
-        font-size: 18px;
-        margin-top: 0px;
-    }
-    swiper-slide .txt_area .before_p{
-        font-size: 18px;
-        padding-top: 0px;
-    }
-    swiper-slide .txt_area h2{
-        font-size: 18px;
-    }
-    swiper-slide:first-child .txt_area{
-        /* margin-left: 0px; */
-    }
-    swiper-slide .txt_area .discount{
-    font-size: 18px;
-    color: rgb(71, 124, 99);
-    margin-left: 0px;
-}
-    swiper-slide .txt_area .price{
-    font-size: 20px;
-    display: block;
-    align-items: start;
-}
-    .txt_area h2 {
-        font-size: 14px;
-    }
-    .sell_p {
-        font-size: 13px;
-    }
-    .img_area img {
-        width: 100%;
-        height: auto;
-    }
-
-    
-    /* our 영역--------------------------- */
-    
-    #section .our{
-        display: block;
-    }
-    #section .our > li{
-        width: 100%;
-        height: 400px;
-        padding: 100px 0 0 50px ;
-    }
-    #section .our > li h2{
-    font-size: 36px;
-    }
-    #section .our > li p{
-    font-size: 14px;
-    }
-
-
-
-
-    /* refill 영역 */
-
-    #section .refills .sm_txt{
-    font-size: 18px;
-    }
-    #section .refills h2{
-    font-size: 30px;
-    }
-
-
-
-
-
-    /* life 영역----------------------------- */
-    
-    #section .life{
-        padding: 100px 0 100px;
-    }
-    #section .life .life_list{
-    width: 100%;
-    display: block;
-    overflow: hidden;
-}
-    #section .life_head{
-        padding: 0 15px 10px;
-    }
-    #section .life_head .section_title{
-        font-size: 1.4em;
-    }
-    
-    #section .life .life_list li{
-        width: 100%; 
-        flex-shrink: 0;
-        margin-top: 100px;
-    }
-    
-    
-    #section .life .life_list li:first-child .life_txt_area{
-        padding-left: 0px;
-    }
-    #section .life .life_list .life_txt_area{
-        margin-top: 14px;
-    }
-
-    #section .life .life_list .life_txt_area h2{
-    font-size: 16px;
-    }
-#se
-    #section .life .life_list .life_txt_area p{
-        font-size: 14px;
-        margin-top: 10px;
-    }
-
-
-    /* sinsa-------------- */
-    #section .sinsa{
-    background-image: url(images/Aromatica_sinsa_MO.jpg);
-    }
-    #section .sinsa .sinsa_txt{
-        padding: 350px 0 100px 10px;
-    }
-    #section .sinsa .sinsa_txt h2{
-        font-size: 2.6em;
-    }
-    #section .sinsa .sinsa_txt p{
-        margin-top: 16px;
-    }
-
-
-    /* 카카오상담 버튼 */
-    #section .kakao{
-        display: none;
-    }
-
-
-
-
-    /* footer ------------------ */
-    #footer{
-        padding-bottom: 10px;
-    }
-    #footer .wrap_foot{
-        padding: 0 20px;
-    }
-    #footer .wrap_foot .foot_top{
-        display: block;
-        margin-bottom: 60px;
-    }
-    #footer .wrap_foot .foot_top .foot_menu{
-        display: block;
-        padding-top: 30px;
-    }
-    #footer .wrap_foot .foot_top .foot_menu > li{
-        margin-top: 20px;
-        margin-left: 0px;
-    }
-    #footer .wrap_foot .foot_top .foot_menu > li h3{
-        font-size: 18px;
-        position: relative;
-    }
-    #footer .wrap_foot .foot_top .foot_menu > li h3::after{
-        content: "\002B";
-        position: absolute;
-        right: 0px;
-    }
-    #footer .wrap_foot .foot_top .foot_menu > li > ul{
-        display: none;
-    }
-}
 
 
 
