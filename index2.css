@@ -225,7 +225,31 @@ body{
     margin-left: -100%;
 }
 
-#section .main_banner .main_ban_img_area li{
+/* 메인배너 스와이퍼-=--------- */
+.mainSwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.mainSwiper::part(bullet) {
+    box-sizing: border-box;
+    width: 30px;
+    height: 3px;
+    margin: 0 1px;
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.507);
+}
+
+/* ▽ 활성된 알 */
+.mainSwiper::part(bullet-active) {
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 60px;
+    border-radius: 0;
+    transition: all 0.5s;
+}
+
+.slide {
     width: 20%;
     height: 923px;
     background-repeat: no-repeat;
@@ -233,52 +257,74 @@ body{
     background-position: center;
     position: relative;
 }
-#section .main_banner .main_ban_img_area li.bg1{
-    background-image: url(images/2025_MAR_half_main_PC007.jpg);
+
+.slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-#section .main_banner .main_ban_img_area li.bg2{
-    background-image: url(images/2025_FEB_half_main_PC0602.jpg);
+/* ---------------------------------------- */
+/* #section .main_banner .main_ban_img_area li{
+    width: 20%;
+    height: 923px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+} */
+#section .main_banner .mainSwiper .bg1{
+    background-image: url(images/main_01.jpg);
 }
-#section .main_banner .main_ban_img_area li.bg3{
-    background-image: url(images/2025_MAY_half_main_PC_02.jpg);
+#section .main_banner .mainSwiper .bg2{
+    background-image: url(images/main_02.jpg);
 }
-#section .main_banner .main_ban_img_area li.bg4{
-    background-image: url(images/2025_MAY_half_main_PC_05.jpg);
+#section .main_banner .mainSwiper .bg3{
+    background-image: url(images/main_03.jpg);
 }
-#section .main_banner .main_ban_img_area li.bg5{
-    background-image: url(images/2025_MAY_half_main_PC_03.jpg);
+#section .main_banner .mainSwiper .bg4{
+    background-image: url(images/main_04.jpg);
+}
+#section .main_banner .mainSwiper .bg5{
+    background-image: url(images/main_05.jpg);
+}
+#section .main_banner .mainSwiper .bg6{
+    background-image: url(images/main_06.jpg);
+}
+#section .main_banner .mainSwiper .bg7{
+    background-image: url(images/main_07.jpg);
 }
 
-#section .main_banner .main_ban_img_area li a{
+#section .main_banner .mainSwiper .slide a{
     display: block;
     width: 100%;
     height: 100%;
 }
-#section .main_banner .main_ban_img_area li .ban_txt{
+#section .main_banner .mainSwiper .slide .ban_txt{
     position: absolute;
     top: 40%;
     left: 80px;
 }
-#section .main_banner .main_ban_img_area li .ban_txt .m_banner_title{
+#section .main_banner .mainSwiper .slide .ban_txt .m_banner_title{
     font-size: 4.8em;
     line-height: 1.1;
 }
-#section .main_banner .main_ban_img_area li .ban_txt{
+#section .main_banner .mainSwiper .slide .ban_txt{
     color: white;
 }
-#section .main_banner .main_ban_img_area li .ban_txt h2{
+#section .main_banner .mainSwiper .slide .ban_txt h2{
     font-size: 20px;
     font-weight: 400;
     letter-spacing: -1px;
     margin-top: 10px;
 }
-#section .main_banner .main_ban_img_area li .ban_txt div{
+/* #section .main_banner .mainSwiper .slide .ban_txt div{
     margin-top: 40px;
 }
-#section .main_banner .main_ban_img_area .ban_txt em{
+#section .main_banner .mainSwiper .ban_txt em{
     position: relative;
 }
-#section .main_banner .main_ban_img_area .ban_txt em::after{
+#section .main_banner .mainSwiper .ban_txt em::after{
     content: "";
     display: block;
     width: 70px;
@@ -289,8 +335,8 @@ body{
     transition:  transform 0.5s;
     transform-origin: 0 0;
     transform: scaleX(1);
-}
-#section .main_banner .main_ban_img_area li:hover .ban_txt em::after{
+} */
+#section .main_banner .mainSwiper .slide:hover .ban_txt em::after{
     transform: scaleX(0);
     transform-origin: 100% 0;
 }
@@ -385,76 +431,83 @@ body{
 
 /* 제품 리스트 스와이퍼 공통 적용---------------------------------- */
 swiper-container {
-    height: 800px;
+    /* height: 820px; */
 }
 
-.mySwiper {
+.itemSwiper {
     position: relative !important;
     overflow: visible !important;
-    /* border: 1px solid red; */
-    position: relative;
+    border: 1px solid red;
 
 }
 
-.mySwiper::part(pagination) {
+.itemSwiper::part(pagination) {
     position: absolute !important;
-    top: 99.5% !important;
+    top: auto !important;
+    bottom:10px;
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: 50% !important;
     box-sizing: border-box;
     height: 3px !important;
-    background: rgb(187, 187, 187) !important; /* 배경은 딱 하나만 써! */
+    background: rgb(187, 187, 187) !important; 
+    /* 배경은 딱 하나만 써! */
     z-index: 999;
+}
+.swiper-pagination{
+    margin-top: 50px;
+    border: 1px solid blue;
 }
 
 
-swiper-slide {
+.item-slide {
     flex-shrink: 0;
     box-sizing: border-box;
 }
-swiper-slide .img_area{
+.item-slide .img_area{
     position: relative;
 }
-swiper-slide .img_area img {
+.item-slide .img_area img {
     display: block;
     width: 100%;
     object-fit: cover;
     transition: all 0.5s;
 }
-swiper-slide .img_area img:first-child{
+.item-slide .img_area img:first-child{
     position: absolute; top: 0; left: 0;
 }
-swiper-slide .img_area img:last-child{
+.item-slide .img_area img:last-child{
     opacity: 0;
 }
-swiper-slide:hover .img_area img:first-child{
+.item-slide:hover .img_area img:first-child{
     opacity: 0;
 }
-swiper-slide:hover .img_area img:last-child{
+.item-slide:hover .img_area img:last-child{
     opacity: 1;
 }
-swiper-slide .txt_area{
+.item-slide .txt_area{
     padding-top: 30px;
     padding-left: 10px;
+    /* border: 1px solid blue; */
+    margin-bottom: 100px;
 }
-swiper-slide .txt_area h2{
+.item-slide .txt_area h2{
     font-size: 15px;
     font-weight: 600;
     color: rgb(51, 51, 51);
 }
-swiper-slide .txt_area .price{
+.item-slide .txt_area .price{
     display: flex;
     align-items: center;
 }
-swiper-slide .txt_area p{
+.item-slide .txt_area p{
     font-size: 1.5em;
     font-weight: 800;
     margin-top: 5px;
     color: rgb(43, 43, 43);
 }
 
-swiper-slide .txt_area .before_p{
+.item-slidee .txt_area .before_p{
     color: rgb(151, 151, 151);
     text-decoration: line-through;
     font-size: 1.1em;
@@ -462,11 +515,11 @@ swiper-slide .txt_area .before_p{
     margin-right: 10px;
     padding-top: 5px;
 }
-swiper-slide .txt_area .discount{
+.item-slide .txt_area .discount{
     color: rgb(71, 124, 99);
     margin-left: 10px;
 }
-swiper-slide:first-child .txt_area{
+.item-slide:first-child .txt_area{
     /* margin-left: 25px; */
 }
 

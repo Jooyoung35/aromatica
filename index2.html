@@ -12,12 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- css -->
+        <!-- <link rel="stylesheet" href="swiper-bundle.css"> -->
     <link rel="stylesheet" href="index2.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->
+    <!-- <script src="swiper-bundle.js"></script> -->
     
     <script>
     $(document).ready(function(){
@@ -53,30 +55,30 @@
             
 
         //메인배너 이미지 
-        let i = 0; // 현재 보여지는 애
-        let count = $(".main_ban_img_area>li").length;
+        // let i = 0; 
+        // let count = $(".main_ban_img_area>li").length;
 
-        function autoSlide(){
-            $(".main_ban_img_area").stop().animate({"margin-left":"-100%"}, 500, function(){
-            $(".main_ban_img_area>li").first().appendTo(".main_ban_img_area");
-            $(".main_ban_img_area").css({"margin-left":"0%"}); //위치값 재설정 
+        // function autoSlide(){
+        //     $(".main_ban_img_area").stop().animate({"margin-left":"-100%"}, 500, function(){
+        //     $(".main_ban_img_area>li").first().appendTo(".main_ban_img_area");
+        //     $(".main_ban_img_area").css({"margin-left":"0%"});
 
-            i++;
-            if(i >= count) i = 0;
+        //     i++;
+        //     if(i >= count) i = 0;
 
-            $(".main_ban_btn>li").removeClass("on").eq(i).addClass("on");
-            });
-        }
+        //     $(".main_ban_btn>li").removeClass("on").eq(i).addClass("on");
+        //     });
+        // }
 
-        let autoFade = setInterval(autoSlide, 3000);
+        // let autoFade = setInterval(autoSlide, 3000);
 
-        $(".main_banner").mouseenter(function(){
-            clearInterval(autoFade);
-        });
+        // $(".main_banner").mouseenter(function(){
+        //     clearInterval(autoFade);
+        // });
 
-        $(".main_banner").mouseleave(function(){
-            autoFade = setInterval(autoSlide, 3000);
-        });
+        // $(".main_banner").mouseleave(function(){
+        //     autoFade = setInterval(autoSlide, 3000);
+        // });
 
 
     });
@@ -177,7 +179,7 @@
     </div>
 
     <div id="section">
-        <div class="main_banner">
+        <!-- <div class="main_banner">
             <ul class="main_ban_img_area">
                 <li class="bg1">
                     <a href="#"></a>
@@ -241,6 +243,87 @@
                 <li></li>
                 <li></li>
             </ul>
+        </div> -->
+        
+        <div class="main_banner">
+            <swiper-container class="mainSwiper" pagination="true"  loop="true" pagination-clickable="true"  space-between="0"
+                centered-slides="true" autoplay-delay="3000" autoplay-disable-on-interaction="false">
+                <swiper-slide class="bg1 slide">
+                    <a href="#"></a>
+                    <div class="ban_txt">
+                        <h1 class="m_banner_title">New Arrival</h1>
+                        <h2 class="m_banner_desc">
+                            신제품을 특별한 혜택과 함께 만나보세요<br>10%OFF
+                        </h2>
+                        <div><em>view more</em></div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide class="bg2 slide">
+                    <a href="#"></a>
+                    <div class="ban_txt">
+                        <h1 class="m_banner_title">Last Chance ~60%</h1>
+                        <h2 class="m_banner_desc">
+                            놓치면 아쉬을 특별한 기회<br>
+                            지금 바로 아로마티카 시즌 제품을 60% 할인가로 만나보세요
+                        </h2>
+                        <div><em>view more</em></div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide class="bg3 slide">
+                    <a href="#"></a>
+                    <div class="ban_txt">
+                        <h1 class="m_banner_title">AROMATICA Sinsa</h1>
+                        <h2 class="m_banner_desc">
+                            스토어에서 만나는 특별한 6월 멤버십 혜택
+                        </h2>
+                        <div><em>view more</em></div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide class="bg4 slide">
+                    <a href="#"></a>
+                    <div class="ban_txt">
+                        <h1 class="m_banner_title">AROMATICA Origin</h1>
+                        <h2 class="m_banner_desc">
+                            더 깨끗하고 안전한 성분,<br>
+                            아로마티카의 원료를 확인해 보세요
+                        </h2>
+                        <div><em>view more</em></div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide class="bg5 slide">
+                    <a href="#"></a>
+                    <div class="ban_txt">
+                        <h1 class="m_banner_title">Pouch Essentials</h1>
+                        <h2 class="m_banner_desc">
+                            작지만 확실한, 파우치 속 여름 해방 루틴<br>
+                            여름 일상에 꼭 필요한 쿨링 아이템을 소개합니다
+                        </h2>
+                        <div><em>view more</em></div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide class="bg6 slide">
+                    
+                    <div class="ban_txt">
+                        <h1 class="m_banner_title">Super Tea Tree</h1>
+                        <h2 class="m_banner_desc">
+                            본질에 집중한 트러블 케어<br>
+                            아로마티카의 슈퍼 티트리를 소개합니다
+                        </h2>
+                        <div><em>view more</em></div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide class="bg7 slide">
+                    <a href="#"></a>
+                    <div class="ban_txt">
+                        <h1 class="m_banner_title">Awaken your Senses</h1>
+                        <h2 class="m_banner_desc">
+                            피부 온도를 낮추고, 일상의 답답함까지 씻어내는 시간,<br>
+                            샤워 후에도 오래 지속되는 쿨링과 상쾌함을 경험하세요
+                        </h2>
+                        <div><em>view more</em></div>
+                    </div>
+                </swiper-slide>
+            </swiper-container>
         </div>
 
         <div class="most_popular items">
@@ -248,11 +331,11 @@
                 <h1 class="section_title">Most Popular</h1>
                 <a href="#"><p class="view_all">view all</p></a>
             </div>
-            <swiper-container class="mySwiper" pagination pagination-type="progressbar" style="
+            <swiper-container class="itemSwiper" pagination pagination-type="progressbar" style="
             --swiper-theme-color: rgb(51, 51, 51);
             --swiper-pagination-progressbar-bg-color:#bbb;
             ">
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/most_01.jpg" alt="수딩알로에베라1">
@@ -269,7 +352,7 @@
                         
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/most_02.jpg" alt="필로우미스트1">
@@ -281,7 +364,7 @@
                         <p>30,000원</p>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/most_03.jpg" alt="릴리프밤1">
@@ -293,7 +376,7 @@
                         <p>28,000원</p>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/most_04.jpg" alt="리드디퓨저1">
@@ -305,7 +388,7 @@
                         <p>29,000원</p>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/most_05.jpg" alt="컨센트레이티드에센스1">
@@ -317,7 +400,7 @@
                         <p>30,000원</p>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/most_06.jpg" alt="탄력앰플1">
@@ -333,7 +416,7 @@
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/most_07.jpg" alt="탄력크림1">
@@ -349,7 +432,7 @@
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/most_08.jpg" alt="바디크림샌달우드1">
@@ -365,7 +448,7 @@
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/most_09.jpg" alt="바디오일&바디괄사1">
@@ -403,11 +486,11 @@
                 <h1 class="section_title">New Arrivals</h1>
                 <a href="#"><p class="view_all">view all</p></a>
             </div>
-            <swiper-container class="mySwiper" pagination pagination-type="progressbar" style="
+            <swiper-container class="itemSwiper" pagination pagination-type="progressbar" style="
             --swiper-theme-color: rgb(51, 51, 51);
             --swiper-pagination-progressbar-bg-color:#bbb;
             ">
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/new_arrivals_09.jpg" alt="젤클렌저1">
@@ -423,7 +506,7 @@
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/new_arrivals_08.jpg" alt="샴푸파우더1">
@@ -439,7 +522,7 @@
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/new_arrivals_07.jpg" alt="디퓨징오일세트1">
@@ -455,7 +538,7 @@
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/new_arrivals_06.jpg" alt="미니에센셜즈1">
@@ -471,7 +554,7 @@
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/new_arrivals_05.jpg" alt="사이프러스1">
@@ -487,7 +570,7 @@
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/new_arrivals_04.jpg" alt="시더우드1">
@@ -503,7 +586,7 @@
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/new_arrivals_03.jpg" alt="로즈마리1">
@@ -519,7 +602,7 @@
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/new_arrivals_02.jpg" alt="라벤더1">
@@ -535,7 +618,7 @@
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/new_arrivals_01.jpg" alt="파우더워시1">
@@ -566,11 +649,11 @@
                 <h1 class="section_title">Spring Outlet</h1>
                 <a href="#"><p class="view_all">view all</p></a>
             </div>
-            <swiper-container class="mySwiper" pagination pagination-type="progressbar" style="
+            <swiper-container class="itemSwiper" pagination pagination-type="progressbar" style="
             --swiper-theme-color: rgb(51, 51, 51);
             --swiper-pagination-progressbar-bg-color:#bbb;
             ">
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/outlet_01.jpg" alt="멜로우니스샌달우드">
@@ -586,7 +669,7 @@
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/outlet_02.jpg" alt="알로에아쿠아크림1">
@@ -603,7 +686,7 @@
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/outlet_03.jpg" alt="로즈마리샴푸바1">
@@ -619,7 +702,7 @@
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/outlet_04.jpg" alt="티트리클렌징바1">
@@ -635,7 +718,7 @@
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/outlet_05.jpg" alt="비타씨세럼1">
@@ -651,7 +734,7 @@
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/outlet_06.jpg" alt="마사지크림레몬1">
@@ -667,7 +750,7 @@
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide class="item-slide">
                     <div class="img_area">
                         <a href="#">
                             <img src="images/outlet_07.jpg" alt="핸드크림듀오1">
@@ -837,7 +920,7 @@
     import { register } from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.mjs';
     register();
 
-const swipers = document.querySelectorAll('.mySwiper');
+const swipers = document.querySelectorAll('.itemSwiper');
 
 function updateSlidesPerView() {
     const width = window.innerWidth;
