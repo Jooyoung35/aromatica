@@ -200,10 +200,22 @@ body{
 }
 #header .hd_inner .side_menu .search{
     margin-right: 40px;
-}
-#header .hd_inner .side_menu .search a{
     display: flex;
+    /* border: 1px solid red; */
 }
+#header .hd_inner .side_menu .search input{
+    width: 120px;
+    border: none;
+    background-color: #ffffff00;
+    border-bottom: 1px solid white;
+    color: white;
+    padding: 0 10px;
+}
+#header .hd_inner .side_menu .search input:focus {
+    outline: none;
+    /* box-shadow: none; */
+}
+
 #header .hd_inner .side_menu .search div{
     width: 140px;
     height: 30px;
